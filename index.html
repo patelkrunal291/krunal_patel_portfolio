@@ -1,0 +1,1978 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Krunal Patel — Portfolio</title>
+  <meta name="description"
+    content="Portfolio of Krunal Patel — Product Design Manager with 10+ years of experience in UI/UX, Design Systems, and AI-Driven Design.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap"
+    rel="stylesheet">
+
+  <style>
+    /* ============================================================
+     TOKENS — edit these to re-skin the whole site
+     ============================================================ */
+    :root {
+      --paper: #F7F6F2;
+      --card: #FFFFFF;
+      --ink: #1F1E1B;
+      --ink-soft: #6E6C64;
+      --accent: #1A4080;
+      --accent-soft: #E1E8F0;
+      --line: rgba(31, 30, 27, 0.13);
+
+      --font-display: "Newsreader", serif;
+      --font-body: "Inter", sans-serif;
+      --font-mono: "IBM Plex Mono", monospace;
+
+      --gutter: clamp(20px, 5vw, 72px);
+      --maxw: 1180px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      * {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+
+    body {
+      background: var(--paper);
+      color: var(--ink);
+      font-family: var(--font-body);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    :focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 3px;
+    }
+
+    h1,
+    h2,
+    h3 {
+      font-family: var(--font-display);
+      font-weight: 500;
+      letter-spacing: -0.01em;
+      color: var(--ink);
+    }
+
+    .wrap {
+      max-width: var(--maxw);
+      margin: 0 auto;
+      padding: 0 var(--gutter);
+    }
+
+    section {
+      padding: 88px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    section:last-of-type {
+      border-bottom: none;
+    }
+
+    .section-head {
+      display: flex;
+      align-items: baseline;
+      gap: 16px;
+      margin-bottom: 48px;
+    }
+
+    .section-head .idx {
+      font-family: var(--font-mono);
+      font-size: 13px;
+      color: var(--accent);
+      letter-spacing: 0.04em;
+      white-space: nowrap;
+    }
+
+    .section-head h2 {
+      font-size: clamp(1.7rem, 3vw, 2.3rem);
+    }
+
+    .section-head::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: var(--line);
+      align-self: center;
+    }
+
+    .lede {
+      color: var(--ink-soft);
+      max-width: 60ch;
+      margin-bottom: 8px;
+    }
+
+    /* ============================================================
+     NAV
+     ============================================================ */
+    .nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 60;
+      background: rgba(247, 246, 242, 0.9);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav .wrap {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 72px;
+    }
+
+    .nav__logo {
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: 1.15rem;
+    }
+
+    .nav__links {
+      display: flex;
+      gap: 28px;
+      overflow-x: auto;
+    }
+
+    .nav__links a {
+      font-family: var(--font-mono);
+      font-size: 12.5px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--ink-soft);
+      transition: color 0.2s ease;
+      white-space: nowrap;
+    }
+
+    .nav__links a:hover,
+    .nav__links a.is-active {
+      color: var(--accent);
+    }
+
+    .nav__cta {
+      font-family: var(--font-mono);
+      font-size: 12.5px;
+      border: 1px solid var(--ink);
+      padding: 9px 16px;
+      border-radius: 2px;
+      white-space: nowrap;
+      transition: background 0.2s ease, color 0.2s ease;
+    }
+
+    .nav__cta:hover {
+      background: var(--ink);
+      color: var(--paper);
+    }
+
+    /* ============================================================
+     HOME
+     ============================================================ */
+    #home {
+      padding-top: 180px;
+      padding-bottom: 100px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .home-grid {
+      display: grid;
+      grid-template-columns: 1.3fr 0.9fr;
+      gap: var(--gutter);
+      align-items: center;
+    }
+
+    .home-eyebrow {
+      font-family: var(--font-mono);
+      font-size: 12.5px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 20px;
+    }
+
+    .home h1 {
+      font-size: clamp(2.6rem, 6vw, 4.4rem);
+      line-height: 1.06;
+    }
+
+    .home h1 em {
+      font-style: italic;
+      color: var(--accent);
+    }
+
+    .home__role {
+      font-size: 1.1rem;
+      color: var(--ink-soft);
+      margin-top: 18px;
+      max-width: 46ch;
+    }
+
+    .home__actions {
+      display: flex;
+      gap: 14px;
+      margin-top: 36px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      font-family: var(--font-mono);
+      font-size: 12.5px;
+      letter-spacing: 0.03em;
+      padding: 14px 26px;
+      border-radius: 2px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+    }
+
+    .btn--solid {
+      background: var(--ink);
+      color: var(--paper);
+      border: 1px solid var(--ink);
+    }
+
+    .btn--solid:hover {
+      background: var(--accent);
+      border-color: var(--accent);
+    }
+
+    .btn--outline {
+      border: 1px solid var(--ink);
+      color: var(--ink);
+    }
+
+    .btn--outline:hover {
+      background: var(--ink);
+      color: var(--paper);
+    }
+
+    .home__frame {
+      aspect-ratio: 4/5;
+      display: flex;
+      align-items: flex-end;
+      padding: 0;
+      position: relative;
+      overflow: visible;
+      background: none;
+      border: none;
+    }
+
+    /* big soft circle behind subject */
+    .home__frame::before {
+      content: "";
+      position: absolute;
+      top: 4%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 88%;
+      padding-top: 88%;
+      border-radius: 50%;
+      background: radial-gradient(circle at 40% 40%, #d6e4f7 0%, #b8cff0 55%, #8aafd8 100%);
+      z-index: 0;
+    }
+
+    /* decorative dot-grid behind */
+    .home__frame::after {
+      content: "";
+      position: absolute;
+      bottom: -18px;
+      right: -18px;
+      width: 130px;
+      height: 130px;
+      background-image: radial-gradient(circle, var(--accent) 1.5px, transparent 1.5px);
+      background-size: 14px 14px;
+      opacity: 0.22;
+      z-index: 0;
+    }
+
+    .home__frame img {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+      filter: drop-shadow(0 24px 48px rgba(26, 64, 128, 0.22)) drop-shadow(0 4px 12px rgba(0, 0, 0, 0.15));
+      transition: filter 0.4s ease, transform 0.4s ease;
+    }
+
+    .home__frame:hover img {
+      transform: translateY(-6px) scale(1.02);
+      filter: drop-shadow(0 32px 56px rgba(26, 64, 128, 0.28)) drop-shadow(0 4px 14px rgba(0, 0, 0, 0.18));
+    }
+
+    .home__frame .photo-overlay {
+      display: none;
+    }
+
+    .home__frame .photo-label {
+      position: absolute;
+      bottom: -32px;
+      left: 0;
+      right: 0;
+      z-index: 3;
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      opacity: 0.8;
+      text-align: center;
+    }
+
+    .home__frame span {
+      display: none;
+    }
+
+    /* ============================================================
+     ABOUT
+     ============================================================ */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--gutter);
+    }
+
+    .about-grid p {
+      margin-bottom: 16px;
+      color: var(--ink);
+      max-width: 56ch;
+    }
+
+    .facts {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px 32px;
+    }
+
+    .facts dt {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      text-transform: uppercase;
+      color: var(--ink-soft);
+      letter-spacing: 0.05em;
+    }
+
+    .facts dd {
+      font-size: 1rem;
+      margin-top: 5px;
+      font-weight: 500;
+    }
+
+    /* ============================================================
+     TIMELINE — education + experience
+     ============================================================ */
+    .timeline {
+      position: relative;
+      padding-left: 28px;
+      border-left: 1px solid var(--line);
+    }
+
+    .timeline-item {
+      position: relative;
+      padding-bottom: 40px;
+    }
+
+    .timeline-item:last-child {
+      padding-bottom: 0;
+    }
+
+    .timeline-item::before {
+      content: "";
+      position: absolute;
+      left: -33px;
+      top: 4px;
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: var(--paper);
+      border: 2px solid var(--accent);
+    }
+
+    .timeline-item__meta {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+      font-family: var(--font-mono);
+      font-size: 12px;
+      color: var(--ink-soft);
+      margin-bottom: 6px;
+    }
+
+    .timeline-item h3 {
+      font-size: 1.25rem;
+    }
+
+    .timeline-item .org {
+      color: var(--accent);
+      font-weight: 500;
+      margin-top: 2px;
+      display: block;
+    }
+
+    .timeline-item p {
+      color: var(--ink-soft);
+      margin-top: 10px;
+      max-width: 60ch;
+      font-size: 0.96rem;
+    }
+
+    /* ============================================================
+     WORK
+     ============================================================ */
+    .work-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .work-card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .work-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 28px rgba(31, 30, 27, 0.08);
+    }
+
+    .work-card__img {
+      aspect-ratio: 4/3;
+      background: var(--accent-soft);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .work-card__img--optima {
+      background: linear-gradient(135deg, #0f0c29 0%, #1a1a4e 50%, #24243e 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .work-card__img--optima .optima-logo-wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .work-card__img--optima .optima-wordmark {
+      font-family: var(--font-display);
+      font-size: 1.3rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      color: #fff;
+    }
+
+    .work-card__img--optima .optima-wordmark span {
+      color: #f96a2b;
+    }
+
+    .work-card__body {
+      padding: 22px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      flex: 1;
+    }
+
+    .work-card__top {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--ink-soft);
+      display: flex;
+      justify-content: space-between;
+    }
+    .work-card__top span:last-child { display: none; }
+
+    .work-card h3 {
+      font-size: 1.15rem;
+    }
+
+    .work-card p {
+      color: var(--ink-soft);
+      font-size: 0.92rem;
+    }
+
+    .work-card__tags {
+      margin-top: auto;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--accent);
+    }
+
+    /* ============================================================
+     SKILLS
+     ============================================================ */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--gutter);
+    }
+
+    .skill-group h3 {
+      font-size: 1rem;
+      font-family: var(--font-mono);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--ink-soft);
+      margin-bottom: 18px;
+      font-weight: 500;
+    }
+
+    .skill-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .skill-tag {
+      border: 1px solid var(--line);
+      padding: 8px 14px;
+      font-size: 0.88rem;
+      border-radius: 2px;
+    }
+
+    /* ============================================================
+     RESUME
+     ============================================================ */
+    .resume-box {
+      background: var(--card);
+      border: 1px solid var(--line);
+      padding: 52px var(--gutter);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+
+    .resume-box h3 {
+      font-size: 1.5rem;
+      margin-bottom: 8px;
+    }
+
+    .resume-box p {
+      color: var(--ink-soft);
+      max-width: 44ch;
+    }
+
+    /* ============================================================
+     CONTACT
+     ============================================================ */
+    .contact-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 48px;
+    }
+
+    .contact-card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      padding: 36px 28px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .contact-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 28px rgba(26, 64, 128, 0.1);
+    }
+
+    .contact-card__icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--accent-soft);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 6px;
+    }
+
+    .contact-card__icon svg {
+      width: 20px;
+      height: 20px;
+      stroke: var(--accent);
+      fill: none;
+      stroke-width: 1.8;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .contact-card__label {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--ink-soft);
+    }
+
+    .contact-card__value {
+      font-size: 1rem;
+      font-weight: 500;
+      color: var(--ink);
+      word-break: break-all;
+    }
+
+    .contact-card__link {
+      margin-top: auto;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--accent);
+      letter-spacing: 0.04em;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      border-bottom: 1px solid transparent;
+      padding-bottom: 1px;
+      transition: border-color 0.2s;
+    }
+
+    .contact-card__link:hover {
+      border-color: var(--accent);
+    }
+
+    @media (max-width: 900px) {
+      .contact-cards {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    footer {
+      padding: 32px 0;
+      display: flex;
+      justify-content: space-between;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--ink-soft);
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    /* ============================================================
+     MODAL
+     ============================================================ */
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      z-index: 200;
+      background: rgba(15, 14, 12, 0.65);
+      backdrop-filter: blur(6px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
+
+    .modal-backdrop.is-open {
+      opacity: 1;
+      pointer-events: all;
+    }
+
+    .modal {
+      background: var(--card);
+      max-width: 620px;
+      width: 100%;
+      border: 1px solid var(--line);
+      position: relative;
+      transform: translateY(20px);
+      transition: transform 0.3s ease;
+      max-height: 90vh;
+      overflow-y: auto;
+    }
+
+    .modal-backdrop.is-open .modal {
+      transform: translateY(0);
+    }
+
+    .modal__header {
+      padding: 32px 32px 0;
+    }
+
+    .modal__thumb {
+      width: 100%;
+      aspect-ratio: 16/7;
+      background: var(--accent-soft);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 0;
+    }
+
+    .modal__thumb--dark {
+      background: linear-gradient(135deg, #0f0c29 0%, #1a1a4e 50%, #24243e 100%);
+    }
+    .modal__thumb--databook {
+      background: linear-gradient(135deg, #EAF0FB 0%, #C8D9F5 50%, #A8C0EE 100%);
+    }
+
+    .modal__meta {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--ink-soft);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+      display: flex;
+      gap: 16px;
+    }
+
+    .modal__title {
+      font-size: 1.5rem;
+      margin-bottom: 8px;
+    }
+
+    .modal__tags {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--accent);
+      margin-bottom: 24px;
+    }
+
+    .modal__body {
+      padding: 24px 32px 32px;
+    }
+
+    .modal__body p {
+      color: var(--ink-soft);
+      font-size: 0.95rem;
+      line-height: 1.7;
+      margin-bottom: 14px;
+    }
+
+    .modal__body p:last-child {
+      margin-bottom: 0;
+    }
+
+    .modal__body ul {
+      padding-left: 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .modal__body li {
+      color: var(--ink-soft);
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+    .modal__link {
+      display: inline-flex; align-items: center; gap: 6px;
+      margin-top: 20px; font-family: var(--font-mono); font-size: 11.5px;
+      letter-spacing: 0.05em; color: var(--accent); border-bottom: 1px solid var(--accent);
+      padding-bottom: 2px; transition: opacity 0.2s;
+    }
+    .modal__link:hover { opacity: 0.7; }
+
+    .modal__close {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      width: 36px;
+      height: 36px;
+      border: 1px solid var(--line);
+      background: var(--card);
+      cursor: pointer;
+      border-radius: 2px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s, border-color 0.2s;
+    }
+
+    .modal__close:hover {
+      background: var(--ink);
+      border-color: var(--ink);
+    }
+
+    .modal__close:hover svg {
+      stroke: var(--paper);
+    }
+
+    .modal__close svg {
+      width: 16px;
+      height: 16px;
+      stroke: var(--ink);
+      fill: none;
+      stroke-width: 2;
+      stroke-linecap: round;
+    }
+
+    /* make work-card a button */
+    a.work-card {
+      cursor: pointer;
+    }
+
+    /* ============================================================
+     REVEAL
+     ============================================================ */
+    .reveal {
+      opacity: 0;
+      transform: translateY(14px);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+
+    .reveal.is-visible {
+      opacity: 1;
+      transform: none;
+    }
+
+    /* ============================================================
+     MOBILE
+     ============================================================ */
+    @media (max-width: 900px) {
+      .nav__links {
+        display: none;
+      }
+
+      .home-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .home__frame {
+        max-width: 280px;
+      }
+
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .work-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .skills-grid {
+        grid-template-columns: 1fr;
+        gap: 36px;
+      }
+
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+
+      .resume-box {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .work-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .section-head {
+        flex-wrap: wrap;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav class="nav" aria-label="Primary">
+    <div class="wrap">
+      <span class="nav__logo">Krunal Patel</span>
+      <div class="nav__links" id="navLinks">
+        <a href="#home" data-section="home">Home</a>
+        <a href="#about" data-section="about">About</a>
+        <a href="#education" data-section="education">Education</a>
+        <a href="#experience" data-section="experience">Experience</a>
+        <a href="#work" data-section="work">Work</a>
+        <a href="#skills" data-section="skills">Skills</a>
+        <a href="#resume" data-section="resume">Resume</a>
+      </div>
+      <a href="#contact" class="nav__cta">Contact</a>
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- ============ HOME ============ -->
+    <section id="home">
+      <div class="wrap home-grid">
+        <div>
+          <div class="home-eyebrow">Product Design Manager · UI/UX · Product · AI-Driven Design</div>
+          <h1>Hi, I'm Krunal —<br>I design products<br>that <em>drive impact.</em></h1>
+          <p class="home__role">10+ years of experience leading cross-functional design teams, building scalable design
+            systems, and delivering AI-driven digital products aligned with business goals.</p>
+          <div class="home__actions">
+            <a href="#work" class="btn btn--solid">View my work</a>
+            <a href="Krunal_Patel_Resume.pdf" class="btn btn--outline" download>Download resume</a>
+          </div>
+        </div>
+        <div class="home__frame reveal">
+          <img src="krunal_nobg.png" alt="Krunal Patel — Product Design Manager">
+          <div class="photo-overlay"></div>
+          <span class="photo-label">Product Design Manager</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ ABOUT ============ -->
+    <section id="about">
+      <div class="wrap">
+        <div class="section-head reveal"><span class="idx">01 — About</span>
+          <h2>About me</h2>
+        </div>
+        <div class="about-grid">
+          <div class="reveal">
+            <p>I'm a Product Design Manager based in Ahmedabad, India, with 10+ years of experience across UI/UX, design
+              systems, and product strategy. I have a proven track record of leading cross-functional design and product
+              teams — defining product requirements, authoring PRDs, and delivering user-centered digital products
+              aligned with business goals.</p>
+            <p>I bring extensive hands-on expertise leveraging AI tools (Claude, Figma AI, Windsurf, Copilot) across the
+              design and product lifecycle — ideation, prototyping, user research, and data-driven decisions — to
+              accelerate end-to-end delivery and drive product innovation.</p>
+          </div>
+          <dl class="facts reveal">
+            <div>
+              <dt>Location</dt>
+              <dd>Ahmedabad, India</dd>
+            </div>
+            <div>
+              <dt>Experience</dt>
+              <dd>10+ years</dd>
+            </div>
+            <div>
+              <dt>Focus</dt>
+              <dd>Product Design &amp; AI</dd>
+            </div>
+            <div>
+              <dt>Availability</dt>
+              <dd>Open to opportunities</dd>
+            </div>
+            <div>
+              <dt>Phone</dt>
+              <dd>+91 99049 21328</dd>
+            </div>
+            <div>
+              <dt>Email</dt>
+              <dd>patelkrunal291@gmail.com</dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ EDUCATION ============ -->
+    <section id="education">
+      <div class="wrap">
+        <div class="section-head reveal"><span class="idx">02 — Education</span>
+          <h2>Education</h2>
+        </div>
+        <div class="timeline reveal">
+          <div class="timeline-item">
+            <div class="timeline-item__meta"><span>2009 — 2013</span></div>
+            <h3>Bachelor of Engineering, Computer Engineering</h3>
+            <span class="org">Gujarat Technological University, Ahmedabad</span>
+            <!-- <p>Studied information technology with a focus on software development and systems design, building a strong technical foundation that informs my product and UX work.</p> -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ EXPERIENCE ============ -->
+    <section id="experience">
+      <div class="wrap">
+        <div class="section-head reveal"><span class="idx">03 — Experience</span>
+          <h2>Experience</h2>
+        </div>
+        <div class="timeline reveal">
+          <div class="timeline-item">
+            <div class="timeline-item__meta"><span>Apr. 2025 — Present</span></div>
+            <h3>Product Design Manager</h3>
+            <span class="org">Accumn – A Yubi Company, Ahmedabad</span>
+            <p>Lead and mentor cross-functional teams, driving user-centered UI/UX and product design delivery. Define
+              and execute design strategies aligned with business goals across the product lifecycle. Developed scalable
+              design systems improving consistency and delivery speed by 30%. Integrated AI-driven personalization
+              boosting product engagement by 25%.</p>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-item__meta"><span>Apr. 2023 — Mar. 2025</span></div>
+            <h3>Lead Designer</h3>
+            <span class="org">Accumn – A Yubi Company, Ahmedabad</span>
+            <p>Led a design team overseeing UI/UX execution across multiple product lines for consistent quality. Owned
+              end-to-end delivery for key features, from research through high-fidelity UI handoff. Built and scaled
+              design system components, improving design-engineering collaboration.</p>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-item__meta"><span>Jan. 2019 — Mar. 2023</span></div>
+            <h3>Web Designer</h3>
+            <span class="org">Accumn – A Yubi Company, Ahmedabad</span>
+            <p>Designed wireframes, prototypes, and UI/UX across web and mobile product applications. Built responsive,
+              pixel-accurate web interfaces in close collaboration with front-end developers. Created visual design
+              assets and reusable UI components, laying the early design system foundation.</p>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-item__meta"><span>Mar. 2016 — Jan. 2019</span></div>
+            <h3>Web Designer</h3>
+            <span class="org">Aarvi Encon Limited (GIPL), Gandhinagar</span>
+            <p>Designed wireframes, prototypes, and UI for web and mobile applications. Collaborated closely with
+              developers to ensure seamless, pixel-accurate implementation. Created branding assets and marketing
+              creatives to support business and campaign goals. Led a company-wide rebranding initiative that
+              strengthened brand identity and user engagement.</p>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-item__meta"><span>Oct. 2015 — Feb. 2016</span></div>
+            <h3>Web Designer &amp; Developer</h3>
+            <span class="org">AEON Software Pvt. Ltd. (R.M.C), Rajkot</span>
+            <p>Designed and developed responsive websites and landing pages. Ensured usability, accessibility, and
+              performance optimization across deliverables. Collaborated with developers to ensure accurate design
+              execution.</p>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-item__meta"><span>Aug. 2014 — Sept. 2015</span></div>
+            <h3>IT Software Engineer</h3>
+            <span class="org">Galaxy Bearings Limited, Rajkot</span>
+            <p>Developed and maintained system and embedded software. Debugged and resolved system and networking issues
+              to maintain operational uptime.</p>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-item__meta"><span>Mar. 2014 — Jul. 2014</span></div>
+            <h3>Java Developer</h3>
+            <span class="org">Cabmax Technology Pvt. Ltd., Ahmedabad</span>
+            <p>Developed software using Java, Advanced Java, Hibernate, and MVC frameworks. Collaborated with
+              cross-functional teams to translate requirements into working solutions. Optimized application
+              performance, scalability, and security.</p>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-item__meta"><span>Sept. 2013 — Mar. 2014</span></div>
+            <h3>Jr. Java Developer</h3>
+            <span class="org">Softech Infosys, Ahmedabad</span>
+            <p>Developed software using Java, Advanced Java, Hibernate, and MVC frameworks. Collaborated with teams to
+              translate requirements into technical solutions.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ WORK ============ -->
+    <section id="work">
+      <div class="wrap">
+        <div class="section-head reveal"><span class="idx">04 — Work</span>
+          <h2>Selected work</h2>
+        </div>
+      
+        <div class="work-grid">
+          <a href="#" class="work-card reveal" data-modal="modal-1">
+            <div class="work-card__img work-card__img--optima">
+              <div class="optima-logo-wrap">
+                <!-- Optima AI logo: orange/blue ring icon -->
+                <svg xmlns="http://www.w3.org/2000/svg" width="150" height="150" viewBox="0 0 24 24" fill="none">
+                  <path
+                    d="M11.8245 0C16.8549 0 20.9328 5.29403 20.9328 11.8245C20.9328 18.355 16.8549 23.6491 11.8245 23.6491C6.7942 23.6491 2.7163 18.355 2.7163 11.8245C2.7163 5.29403 6.7942 0 11.8245 0ZM11.8245 0.431159C8.49677 0.431159 5.79909 5.53215 5.79909 11.8245C5.79909 18.1169 8.49677 23.2179 11.8245 23.2179C15.1523 23.2179 17.85 18.1169 17.85 11.8245C17.85 5.53215 15.1523 0.431159 11.8245 0.431159Z"
+                    fill="url(#paint0_linear_5948_34549)" />
+                  <path
+                    d="M0 11.8245C0 6.7942 5.29403 2.7163 11.8245 2.7163C18.355 2.7163 23.6491 6.7942 23.6491 11.8245C23.6491 16.8549 18.355 20.9328 11.8245 20.9328C5.29403 20.9328 0 16.8549 0 11.8245ZM0.431159 11.8245C0.431159 15.1523 5.53215 17.85 11.8245 17.85C18.1169 17.85 23.2179 15.1523 23.2179 11.8245C23.2179 8.49677 18.1169 5.79909 11.8245 5.79909C5.53215 5.79909 0.431159 8.49677 0.431159 11.8245Z"
+                    fill="url(#paint1_linear_5948_34549)" />
+                  <defs>
+                    <linearGradient id="paint0_linear_5948_34549" x1="11.8461" y1="-2.11148" x2="11.8245" y2="22.934"
+                      gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#DCDC5B" />
+                      <stop offset="0.379864" stop-color="#FE5104" />
+                      <stop offset="1" stop-color="#2A80FE" />
+                    </linearGradient>
+                    <linearGradient id="paint1_linear_5948_34549" x1="11.8461" y1="-2.11148" x2="11.8245" y2="22.934"
+                      gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#DCDC5B" />
+                      <stop offset="0.379864" stop-color="#FE5104" />
+                      <stop offset="1" stop-color="#2A80FE" />
+                    </linearGradient>
+                  </defs>
+                </svg>
+                <!-- <span class="optima-wordmark">Optima<span>AI</span></span> -->
+              </div>
+            </div>
+            <div class="work-card__body">
+              <!-- <div class="work-card__top"><span>Accum – Yubi</span><span>2025</span></div> -->
+              <h3>Fintech AI Product</h3>
+              <p>Designed the end-to-end UX/UI for Fintech AI Product, an intelligent fintech assistant that surfaces
+                AI-driven
+                insights, automates workflows, and personalizes the financial analysis experience across Accum's product
+                suite.</p>
+              <div class="work-card__tags">AI Product / Fintech </div>
+            </div>
+          </a>
+          <a href="#" class="work-card reveal" data-modal="modal-2">
+            <div class="work-card__img work-card__img--optima">
+              <div class="optima-logo-wrap">
+                <!-- Optima AI logo: orange/blue ring icon -->
+                 <svg xmlns="http://www.w3.org/2000/svg" width="150" height="150" viewBox="0 0 29 19" fill="none">
+                <path
+                  d="M20.4041 14.9034L14.9534 5.88033C14.6608 5.39592 13.9588 5.39684 13.6674 5.88201L8.24788 14.9065C7.42532 16.2763 8.41039 18.0208 10.0064 18.0208C10.7253 18.0208 11.3917 17.644 11.7632 17.0277L13.8304 13.5978C14.0486 13.2358 14.5723 13.2341 14.7928 13.5946L16.9002 17.0397C17.273 17.6492 17.9355 18.0208 18.6492 18.0208C20.2468 18.0208 21.2311 16.2724 20.4041 14.9034Z"
+                  fill="#B63800" />
+                <path
+                  d="M13.8865 13.5552C15.5291 11.4872 18.4763 11.7692 19.7998 13.9782L14.952 5.88659C14.6605 5.40008 13.9566 5.39971 13.6646 5.88591L8.25038 14.9016C7.42664 16.2732 8.41312 18.0203 10.0114 18.0203C10.7276 18.0203 11.3921 17.6468 11.7653 17.0347L13.8865 13.5552Z"
+                  fill="#FE5104" stroke="#7C0E2D" stroke-opacity="0.4" stroke-width="0.0417782" />
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                  d="M13.6552 13.3933L13.6661 13.3797C14.9347 11.7825 16.9294 11.4901 18.4807 12.3246L14.7105 6.03168C14.5283 5.72761 14.0884 5.72738 13.9059 6.03126L8.49169 15.0469C7.78082 16.2306 8.63213 17.7383 10.0114 17.7383C10.6295 17.7383 11.2029 17.416 11.525 16.8877L13.6552 13.3933ZM14.952 5.88659C14.6605 5.40008 13.9566 5.39971 13.6646 5.88591L8.25038 14.9016C7.42664 16.2732 8.41312 18.0203 10.0114 18.0203C10.7276 18.0203 11.3921 17.6468 11.7653 17.0347L13.8865 13.5552C15.1917 11.9119 17.3208 11.7525 18.8043 12.8647C19.1877 13.1521 19.528 13.5245 19.7998 13.9782L14.952 5.88659Z"
+                  fill="url(#paint0_linear_7492_130779)" />
+                <path
+                  d="M12.5428 1.16135L7.56698 9.42455C6.77088 10.7466 4.85677 10.7472 4.05982 9.42568C3.66685 8.77403 3.66657 7.95801 4.05909 7.30609L5.61184 4.7272C5.76272 4.4766 5.58252 4.15704 5.29032 4.15704H2.08912C1.37111 4.15704 0.704638 3.78351 0.329105 3.17063C-0.515196 1.79269 0.474831 0.0209961 2.08912 0.0209961H11.8997C12.4842 0.0209961 12.8446 0.660153 12.5428 1.16135Z"
+                  fill="#3D84EA" />
+                <path
+                  d="M2.08912 0.0209961H11.8996C12.4841 0.0209961 12.8445 0.660211 12.5426 1.16141L7.87931 8.90409C9.05258 6.74206 7.78545 4.34504 5.43889 4.15704H2.08912C1.37111 4.15704 0.704638 3.78351 0.329105 3.17063C-0.515197 1.79269 0.474831 0.0209961 2.08912 0.0209961Z"
+                  fill="#81AFF2" stroke="#7C0E2D" stroke-opacity="0.4" stroke-width="0.0417782" />
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                  d="M5.45014 3.87504L5.46135 3.87593C7.33692 4.0262 8.57303 5.47485 8.60395 7.15493L12.3015 1.01576C12.4901 0.702509 12.2649 0.302999 11.8996 0.302999H2.08912C0.694962 0.302999 -0.160062 1.8331 0.569107 3.02313C0.893432 3.55244 1.46902 3.87504 2.08912 3.87504H5.45014ZM12.5426 1.16141C12.8445 0.660211 12.4841 0.0209961 11.8996 0.0209961H2.08912C0.474831 0.0209961 -0.515197 1.79269 0.329105 3.17063C0.704638 3.78351 1.37111 4.15704 2.08912 4.15704H5.43889C7.34335 4.30962 8.5368 5.91726 8.29169 7.6734C8.23478 8.08108 8.10036 8.49675 7.87931 8.90409L12.5426 1.16141Z"
+                  fill="url(#paint1_linear_7492_130779)" />
+                <path
+                  d="M16.1688 1.16112L21.0875 9.33607C21.8871 10.6651 23.8119 10.6633 24.6091 9.33275C25.0001 8.68008 24.9994 7.86454 24.6073 7.21253L23.0999 4.70606C22.9492 4.45545 23.1295 4.13606 23.4216 4.13606H26.5739C27.2927 4.13606 27.9593 3.75985 28.3315 3.14403C29.1603 1.77278 28.1745 0.0209961 26.5739 0.0209961H16.812C16.2277 0.0209961 15.8673 0.659917 16.1688 1.16112Z"
+                  fill="#B1B110" />
+                <path
+                  d="M16.1686 1.16112L21.0857 9.33343C21.886 10.6636 23.8126 10.6618 24.6104 9.33011C25.0007 8.67875 25.0012 7.86514 24.6118 7.21326L23.1793 4.81504C22.2407 3.49903 22.6631 0.255998 25.9013 0.0209961H16.8118C16.2275 0.0209961 15.8671 0.659917 16.1686 1.16112Z"
+                  fill="#DCDC5B" stroke="#7C0E2D" stroke-opacity="0.4" stroke-width="0.0417782" />
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                  d="M21.3269 9.18788L16.4098 1.01558C16.2213 0.702324 16.4466 0.302999 16.8118 0.302999H24.0371C23.3906 0.705359 22.9578 1.28108 22.7118 1.90976C22.2921 2.98263 22.4152 4.21968 22.9433 4.96928L24.3702 7.35803C24.7062 7.92065 24.7058 8.62285 24.369 9.18502C23.6804 10.3344 22.0176 10.3359 21.3269 9.18788ZM23.1793 4.81504L24.6118 7.21326C25.0012 7.86514 25.0007 8.67875 24.6104 9.33011C23.8126 10.6618 21.886 10.6636 21.0857 9.33343L16.1686 1.16112C15.8671 0.659917 16.2275 0.0209961 16.8118 0.0209961H25.9013C25.4263 0.0554673 25.0119 0.15466 24.6535 0.302999C22.5685 1.16594 22.3784 3.69207 23.1793 4.81504Z"
+                  fill="url(#paint2_linear_7492_130779)" />
+                <defs>
+                  <linearGradient id="paint0_linear_7492_130779" x1="13.6049" y1="9.27817" x2="13.1342" y2="14.3541"
+                    gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#E24601" stop-opacity="0" />
+                    <stop offset="1" stop-color="#E24601" stop-opacity="0.7" />
+                  </linearGradient>
+                  <linearGradient id="paint1_linear_7492_130779" x1="11.0706" y1="1.05501" x2="1.07404" y2="1.99227"
+                    gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#3D81E4" stop-opacity="0" />
+                    <stop offset="1" stop-color="#3D81E4" stop-opacity="0.4" />
+                  </linearGradient>
+                  <linearGradient id="paint2_linear_7492_130779" x1="17.8761" y1="2.27702" x2="22.5988" y2="3.2974"
+                    gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#C9C937" stop-opacity="0" />
+                    <stop offset="1" stop-color="#C9C937" stop-opacity="0.4" />
+                  </linearGradient>
+                </defs>
+              </svg>
+                <!-- <span class="optima-wordmark">Optima<span>AI</span></span> -->
+              </div>
+            </div>
+           
+            <div class="work-card__body">
+              <!-- <div class="work-card__top"><span>Accum – Yubi</span><span>2024</span></div> -->
+              <h3>Databook</h3>
+              <p>Unified financial intelligence platform providing deep company insights, credit data, and analytics for the  Financial region.</p>
+              <div class="work-card__tags">Fintech / Data Product </div>
+            </div>
+          </a>
+          <a href="#" class="work-card reveal" data-modal="modal-14">
+            <div class="work-card__img" style="background:linear-gradient(135deg,#0d1f3c 0%,#1a3a6e 55%,#1e5ba8 100%);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:10px;">
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <text x="3" y="19" font-family="Arial, sans-serif" font-size="19" font-weight="700" fill="#fff">₹</text>
+              </svg>
+              <span style="font-family:monospace;font-size:0.68rem;color:rgba(255,255,255,0.65);letter-spacing:0.14em;text-transform:uppercase;">Fintech Platform</span>
+            </div>
+            <div class="work-card__body">
+              <!-- <div class="work-card__top"><span>Accum – Yubi</span><span>2024</span></div> -->
+              <h3>Fintech Product Suite</h3>
+              <p>End-to-end fintech platform covering lender–borrower workflows, financial monitoring, risk calculation, Databook analytics, and complete financial analysis for enterprise credit teams.</p>
+              <div class="work-card__tags">Fintech / Credit / Risk </div>
+            </div>
+          </a>
+          <a href="#" class="work-card reveal" data-modal="modal-3">
+            <div class="work-card__img" style="overflow:hidden;">
+              <img src="gir-slider.jpg" alt="Gir Online Booking System" style="width:100%;height:100%;object-fit:cover;object-position:center;">
+            </div>
+            <div class="work-card__body">
+              <div class="work-card__top"><span>Gujarat Forest Dept.</span><span>2023</span></div>
+              <h3>Gir Online Booking System</h3>
+              <p>Official online permit booking platform for Gir Jungle Safari, Devalia Park, Girnar Nature Safari, and Velavadar National Park.</p>
+              <div class="work-card__tags">Gov. Portal   / Booking</div>
+            </div>
+          </a>
+          <a href="#" class="work-card reveal" data-modal="modal-4">
+            <div class="work-card__img" style="overflow:hidden;">
+              <img src="ikf-banner.jpg" alt="International Kite Festival Gujarat" style="width:100%;height:100%;object-fit:cover;object-position:center;">
+            </div>
+            <div class="work-card__body">
+              <div class="work-card__top"><span>Gujarat Tourism (TCGL)</span><span>2023</span></div>
+              <h3>International Kite Festival</h3>
+              <p>Official portal for Gujarat's International Kite Festival — online registration, event itinerary, gallery, and venue information across 10+ cities.</p>
+              <div class="work-card__tags">Tourism / Gov. Portal  </div>
+            </div>
+          </a>
+          <a href="#" class="work-card reveal" data-modal="modal-5">
+            <div class="work-card__img" style="background:#0a1628;display:flex;align-items:center;justify-content:center;">
+              <img src="nfsu-logo.png" alt="NFSU" style="width:70%;max-height:80%;object-fit:contain;filter:brightness(1.1);">
+            </div>
+            <div class="work-card__body">
+              <div class="work-card__top"><span>NFSU — Govt. of India</span><span>2022</span></div>
+              <h3>National Forensic Sciences University</h3>
+              <p>Website redesign for the world's first and only university dedicated entirely to forensic sciences, an Institution of National Importance.</p>
+              <div class="work-card__tags">Education / Gov. Portal  </div>
+            </div>
+          </a>
+          <a href="#" class="work-card reveal" data-modal="modal-6">
+            <div class="work-card__img" style="background:linear-gradient(135deg,#1a3a6e 0%,#2c5fa8 100%);display:flex;align-items:center;justify-content:center;">
+              <span style="font-family:serif;font-size:1.4rem;font-weight:700;color:#fff;letter-spacing:0.05em;">SGGU</span>
+            </div>
+            <div class="work-card__body">
+              <div class="work-card__top"><span>GIPL / Govt. of Gujarat</span><span>2022</span></div>
+              <h3>Shri Govind Guru University</h3>
+              <p>University portal for SGGU — a state university serving tribal and rural communities of South Gujarat, Rajasthan, and Madhya Pradesh.</p>
+              <div class="work-card__tags">Education / Gov. Portal  </div>
+            </div>
+          </a>
+          <a href="#" class="work-card reveal" data-modal="modal-7">
+            <div class="work-card__img" style="overflow:hidden;">
+              <img src="spuv-banner.jpg" alt="Sardar Patel University" style="width:100%;height:100%;object-fit:cover;object-position:center;">
+            </div>
+            <div class="work-card__body">
+              <div class="work-card__top"><span>Sardar Patel University</span><span>2021</span></div>
+              <h3>Sardar Patel University</h3>
+              <p>Public state university portal for SPU, Vallabh Vidyanagar — offering UG, PG, and PhD programmes across science, humanities, and professional studies.</p>
+              <div class="work-card__tags">Education / University Portal  </div>
+            </div>
+          </a>
+          <a href="#" class="work-card reveal" data-modal="modal-8">
+            <div class="work-card__img" style="background:linear-gradient(135deg,#003366 0%,#005599 60%,#0077cc 100%);display:flex;align-items:center;justify-content:center;">
+              <span style="font-family:serif;font-size:1.3rem;font-weight:700;color:#fff;letter-spacing:0.08em;text-align:center;padding:0 12px;">Dahej SEZ</span>
+            </div>
+            <div class="work-card__body">
+              <div class="work-card__top"><span>Dahej SEZ Ltd. (GIDC + ONGC)</span><span>2021</span></div>
+              <h3>Dahej SEZ Portal</h3>
+              <p>Official portal for Dahej Special Economic Zone — a multi-product SEZ promoted by GIDC and ONGC, covering infrastructure services, tenders, and news.</p>
+              <div class="work-card__tags">Industrial / Gov. Portal  </div>
+            </div>
+          </a>
+          <a href="#" class="work-card reveal" data-modal="modal-9">
+            <div class="work-card__img" style="overflow:hidden;background:#f0f4ff;display:flex;align-items:center;justify-content:center;">
+              <img src="auda-logo.png" alt="AUDA" style="width:60%;max-height:80%;object-fit:contain;">
+            </div>
+            <div class="work-card__body">
+              <div class="work-card__top"><span>AUDA — Govt. of Gujarat</span><span>2020</span></div>
+              <h3>AUDA — Urban Development Portal</h3>
+              <p>Portal for Ahmedabad Urban Development Authority — established 1978, managing urban planning, plot booking, auditorium booking, and property services.</p>
+              <div class="work-card__tags">Urban Planning / Gov. Portal  </div>
+            </div>
+          </a>
+          <a href="#" class="work-card reveal" data-modal="modal-10">
+            <div class="work-card__img" style="overflow:hidden;">
+              <img src="gmb-banner.jpg" alt="GMB Ports Gujarat" style="width:100%;height:100%;object-fit:cover;object-position:center;">
+            </div>
+            <div class="work-card__body">
+              <div class="work-card__top"><span>Gujarat Maritime Board</span><span>2020</span></div>
+              <h3>GMB Ports Portal</h3>
+              <p>Official portal for Gujarat Maritime Board managing 44 minor ports along India's longest coastline — 2340 km — handling 484 MMT cargo in 2025–26.</p>
+              <div class="work-card__tags">Maritime / Gov. Portal  </div>
+            </div>
+          </a>
+          <a href="#" class="work-card reveal" data-modal="modal-11">
+            <div class="work-card__img" style="background:linear-gradient(135deg,#1a4080 0%,#2d6abf 60%,#4a90d9 100%);display:flex;align-items:center;justify-content:center;">
+              <span style="font-family:serif;font-size:1.2rem;font-weight:700;color:#fff;letter-spacing:0.04em;text-align:center;padding:0 12px;">HRMS System</span>
+            </div>
+            <div class="work-card__body">
+              <div class="work-card__top"><span>Enterprise</span><span>2019</span></div>
+              <h3>HRMS System</h3>
+              <p>Enterprise Human Resource Management System — covering employee onboarding, attendance, payroll, leave management, and performance review workflows.</p>
+              <div class="work-card__tags">Enterprise / HRMS / UI/UX</div>
+            </div>
+          </a>
+          <a href="#" class="work-card reveal" data-modal="modal-12">
+            <div class="work-card__img" style="background:linear-gradient(135deg,#1a3a2e 0%,#2a6048 60%,#3d8c6a 100%);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px;">
+              <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+              <span style="font-family:monospace;font-size:0.7rem;color:rgba(255,255,255,0.7);letter-spacing:0.12em;text-transform:uppercase;">Result System</span>
+            </div>
+            <div class="work-card__body">
+              <div class="work-card__top"><span>University / Education</span><span>2019</span></div>
+              <h3>University Result System</h3>
+              <p>Online result management and publication portal for universities — enabling students to view semester results, marksheets, and academic transcripts digitally.</p>
+              <div class="work-card__tags">Education / Result Portal  </div>
+            </div>
+          </a>
+          <a href="#" class="work-card reveal" data-modal="modal-13">
+            <div class="work-card__img" style="background:linear-gradient(135deg,#5a2d82 0%,#8040b0 60%,#a868d8 100%);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px;">
+              <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+              <span style="font-family:monospace;font-size:0.7rem;color:rgba(255,255,255,0.7);letter-spacing:0.12em;text-transform:uppercase;">CSC Portal</span>
+            </div>
+            <div class="work-card__body">
+              <div class="work-card__top"><span>Govt. of Gujarat</span><span>2018</span></div>
+              <h3>Citizen Service Center</h3>
+              <p>Government citizen services portal — a one-stop digital platform for residents to access certificates, utility payments, grievance redressal, and civic services online.</p>
+              <div class="work-card__tags">Gov. Portal / Citizen Services  </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SKILLS ============ -->
+    <section id="skills">
+      <div class="wrap">
+        <div class="section-head reveal"><span class="idx">05 — Skills</span>
+          <h2>Skills</h2>
+        </div>
+        <div class="skills-grid">
+          <div class="skill-group reveal">
+            <h3>Design &amp; Product</h3>
+            <div class="skill-tags">
+              <span class="skill-tag">UI/UX Design</span>
+              <span class="skill-tag">Wireframing &amp; Prototyping</span>
+              <span class="skill-tag">Design Systems</span>
+              <span class="skill-tag">Design Thinking</span>
+              <span class="skill-tag">Web &amp; Mobile App Design</span>
+              <span class="skill-tag">Graphic Design &amp; Branding</span>
+              <span class="skill-tag">Prompt Engineering for Design</span>
+              <span class="skill-tag">Content Generation</span>
+              <span class="skill-tag">Data-Driven Design</span>
+            </div>
+          </div>
+          <div class="skill-group reveal">
+            <h3>Technical Skills</h3>
+            <div class="skill-tags">
+              <span class="skill-tag">HTML</span>
+              <span class="skill-tag">CSS</span>
+              <span class="skill-tag">JavaScript</span>
+              <span class="skill-tag">jQuery</span>
+              <span class="skill-tag">Java</span>
+              <span class="skill-tag">MVC</span>
+              <span class="skill-tag">Responsive Design</span>
+              <span class="skill-tag">Web Standards</span>
+              <span class="skill-tag">Accessibility</span>
+            </div>
+          </div>
+          <div class="skill-group reveal">
+            <h3>Tools &amp; Platforms</h3>
+            <div class="skill-tags">
+              <span class="skill-tag">Figma</span>
+              <span class="skill-tag">FigJam</span>
+              <span class="skill-tag">Sketch</span>
+              <span class="skill-tag">Adobe Creative Suite</span>
+              <span class="skill-tag">Photoshop</span>
+              <span class="skill-tag">Illustrator</span>
+              <span class="skill-tag">InDesign</span>
+              <span class="skill-tag">XD</span>
+              <span class="skill-tag">Balsamiq</span>
+            </div>
+          </div>
+          <div class="skill-group reveal">
+            <h3>Analytics &amp; AI</h3>
+            <div class="skill-tags">
+              <span class="skill-tag">AI Analytics Integration</span>
+              <span class="skill-tag">AI Tools for Ideation</span>
+              <span class="skill-tag">Prototyping &amp; User Research</span>
+            </div>
+          </div>
+          <div class="skill-group reveal">
+            <h3>AI Tools</h3>
+            <div class="skill-tags">
+              <span class="skill-tag">Claude Design</span>
+              <span class="skill-tag">Windsurf</span>
+              <span class="skill-tag">Copilot</span>
+              <span class="skill-tag">Magic Patterns</span>
+              <span class="skill-tag">Figma AI</span>
+              <span class="skill-tag">UX Pilot</span>
+            </div>
+          </div>
+          <div class="skill-group reveal">
+            <h3>Leadership &amp; Strategy</h3>
+            <div class="skill-tags">
+              <span class="skill-tag">Team Leadership &amp; Mentorship</span>
+              <span class="skill-tag">Stakeholder Management</span>
+              <span class="skill-tag">Creative Strategy</span>
+              <span class="skill-tag">Cross-Functional Collaboration</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ RESUME ============ -->
+    <section id="resume">
+      <div class="wrap">
+        <div class="section-head reveal"><span class="idx">06 — Resume</span>
+          <h2>Resume</h2>
+        </div>
+        <div class="resume-box reveal">
+          <div>
+            <h3>Want the full picture?</h3>
+            <p>Download a PDF with my full education, experience, and skills as a Product Design Manager with 10+ years
+              of expertise.</p>
+          </div>
+          <a href="Krunal_Patel_Resume.pdf" class="btn btn--solid" download>Download PDF</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section id="contact">
+      <div class="wrap">
+        <div class="section-head reveal"><span class="idx">07 — Contact</span>
+          <h2>Get in touch</h2>
+        </div>
+        <div class="contact-cards">
+
+          <div class="contact-card reveal">
+            <div class="contact-card__icon">
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.6 3.38 2 2 0 0 1 3.59 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.56a16 16 0 0 0 6.53 6.53l.97-.87a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
+              </svg>
+            </div>
+            <span class="contact-card__label">Phone</span>
+            <span class="contact-card__value">+91 99049 21328</span>
+            <a href="tel:+919904921328" class="contact-card__link">Call now →</a>
+          </div>
+
+          <div class="contact-card reveal">
+            <div class="contact-card__icon">
+              <svg viewBox="0 0 24 24">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                <polyline points="22,6 12,13 2,6" />
+              </svg>
+            </div>
+            <span class="contact-card__label">Email</span>
+            <span class="contact-card__value">patelkrunal291@gmail.com</span>
+            <a href="mailto:patelkrunal291@gmail.com" class="contact-card__link">Send email →</a>
+          </div>
+
+          <div class="contact-card reveal">
+            <div class="contact-card__icon">
+              <svg viewBox="0 0 24 24">
+                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+                <rect x="2" y="9" width="4" height="12" />
+                <circle cx="4" cy="4" r="2" />
+              </svg>
+            </div>
+            <span class="contact-card__label">LinkedIn</span>
+            <span class="contact-card__value">krunal-patel-9a559476</span>
+            <a href="https://www.linkedin.com/in/krunal-patel-9a559476/" target="_blank" rel="noopener"
+              class="contact-card__link">View profile →</a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============ MODALS ============ -->
+  <div class="modal-backdrop" id="modalBackdrop" role="dialog" aria-modal="true">
+
+    <!-- Modal 1: Optima AI -->
+    <div class="modal" id="modal-1">
+      <button class="modal__close" aria-label="Close"><svg viewBox="0 0 24 24">
+          <line x1="18" y1="6" x2="6" y2="18" />
+          <line x1="6" y1="6" x2="18" y2="18" />
+        </svg></button>
+      <div class="modal__thumb modal__thumb--dark">
+        <svg xmlns="http://www.w3.org/2000/svg" width="150" height="150" viewBox="0 0 24 24" fill="none">
+          <path
+            d="M11.8245 0C16.8549 0 20.9328 5.29403 20.9328 11.8245C20.9328 18.355 16.8549 23.6491 11.8245 23.6491C6.7942 23.6491 2.7163 18.355 2.7163 11.8245C2.7163 5.29403 6.7942 0 11.8245 0ZM11.8245 0.431159C8.49677 0.431159 5.79909 5.53215 5.79909 11.8245C5.79909 18.1169 8.49677 23.2179 11.8245 23.2179C15.1523 23.2179 17.85 18.1169 17.85 11.8245C17.85 5.53215 15.1523 0.431159 11.8245 0.431159Z"
+            fill="url(#paint0_linear_5948_34549)" />
+          <path
+            d="M0 11.8245C0 6.7942 5.29403 2.7163 11.8245 2.7163C18.355 2.7163 23.6491 6.7942 23.6491 11.8245C23.6491 16.8549 18.355 20.9328 11.8245 20.9328C5.29403 20.9328 0 16.8549 0 11.8245ZM0.431159 11.8245C0.431159 15.1523 5.53215 17.85 11.8245 17.85C18.1169 17.85 23.2179 15.1523 23.2179 11.8245C23.2179 8.49677 18.1169 5.79909 11.8245 5.79909C5.53215 5.79909 0.431159 8.49677 0.431159 11.8245Z"
+            fill="url(#paint1_linear_5948_34549)" />
+          <defs>
+            <linearGradient id="paint0_linear_5948_34549" x1="11.8461" y1="-2.11148" x2="11.8245" y2="22.934"
+              gradientUnits="userSpaceOnUse">
+              <stop stop-color="#DCDC5B" />
+              <stop offset="0.379864" stop-color="#FE5104" />
+              <stop offset="1" stop-color="#2A80FE" />
+            </linearGradient>
+            <linearGradient id="paint1_linear_5948_34549" x1="11.8461" y1="-2.11148" x2="11.8245" y2="22.934"
+              gradientUnits="userSpaceOnUse">
+              <stop stop-color="#DCDC5B" />
+              <stop offset="0.379864" stop-color="#FE5104" />
+              <stop offset="1" stop-color="#2A80FE" />
+            </linearGradient>
+          </defs>
+        </svg>
+      </div>
+      <div class="modal__header">
+        <!-- <div class="modal__meta"><span>Accum – A Yubi Company</span><span>2025</span></div> -->
+        <h3 class="modal__title">Fintech AI Product</h3>
+        <div class="modal__tags">AI Product / Fintech </div>
+      </div>
+      <div class="modal__body">
+        <p>Fintech AI is an intelligent fintech assistant embedded across Accum's product suite, designed to surface
+          AI-driven insights, automate repetitive workflows, and deliver a personalized financial analysis experience to
+          enterprise users.</p>
+        <p>As the lead designer, I owned the full UX/UI from discovery through launch — conducting user research with
+          analysts and finance teams, mapping complex AI interaction patterns, and building a design system specifically
+          for AI-generated content within fintech dashboards.</p>
+        <ul>
+          <li>Designed AI entry points, onboarding flows, and contextual insight panels across 4 product modules</li>
+          <li>Reduced user decision time by 35% through progressive disclosure of AI recommendations</li>
+          <li>Boosted product engagement by 25% post-launch through personalized AI nudges and smart defaults</li>
+          <li>Collaborated closely with ML engineers to ensure feasibility of real-time AI responses in the UI</li>
+          <li>Established AI UX guidelines adopted as a standard across the product org</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Modal 2: Databook -->
+    <div class="modal" id="modal-2">
+      <button class="modal__close" aria-label="Close"><svg viewBox="0 0 24 24">
+          <line x1="18" y1="6" x2="6" y2="18" />
+          <line x1="6" y1="6" x2="18" y2="18" />
+        </svg></button>
+      <div class="modal__thumb modal__thumb--databook">
+        <svg width="80" height="32" viewBox="0 0 160 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <text x="0" y="30" font-family="Georgia, serif" font-size="32" font-weight="800" fill="#1A4080">Databook</text>
+        </svg>
+      </div>
+      <div class="modal__header">
+        <!-- <div class="modal__meta"><span>Accum – A Yubi Company</span><span>2024</span></div> -->
+        <h3 class="modal__title">Databook</h3>
+        <div class="modal__tags">Fintech / Data Product </div>
+      </div>
+      <div class="modal__body">
+        <p>Databook is a unified financial intelligence platform built for the  Financial region, providing analysts, credit teams, and relationship managers with deep company insights, credit bureau data, financial statements, compliance flags, and market analytics — all in a single, cohesive product experience.</p>
+        <p>As the lead designer, I was responsible for the end-to-end UX/UI — from defining information architecture for complex financial data hierarchies through to delivering a clean, high-density interface that balances data richness with usability across desktop and tablet devices.</p>
+        <ul>
+          <li>Designed the company profile, financials, credit report, and risk intelligence modules from scratch</li>
+          <li>Built a scalable entity card system handling 10+ data types — listed, unlisted, SME, and government entities</li>
+          <li>Introduced progressive data disclosure patterns reducing cognitive overload for first-time users by 38%</li>
+          <li>Created a unified search and workspace experience enabling analysts to compare multiple entities side-by-side</li>
+          <li>Delivered WCAG 2.1 AA compliant designs with full dark-mode and high-density layout variants</li>
+          <li>Collaborated with data engineering to design real-time data freshness indicators and error states across 40+ data points</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Modal 14: Fintech Product Suite -->
+    <div class="modal" id="modal-14">
+      <button class="modal__close" aria-label="Close"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+      <div class="modal__thumb" style="background:linear-gradient(135deg,#0d1f3c 0%,#1a3a6e 55%,#1e5ba8 100%);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:12px;">
+        <svg width="56" height="56" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <text x="2" y="21" font-family="Arial, sans-serif" font-size="22" font-weight="700" fill="#fff">₹</text>
+        </svg>
+        <span style="font-family:monospace;font-size:0.7rem;color:rgba(255,255,255,0.65);letter-spacing:0.14em;text-transform:uppercase;">Fintech Platform</span>
+      </div>
+      <div class="modal__header">
+        <!-- <div class="modal__meta"><span>Accum – A Yubi Company</span><span>2024</span></div> -->
+        <h3 class="modal__title">Fintech Product Suite</h3>
+        <div class="modal__tags">Fintech / Credit / Risk / Monitoring </div>
+      </div>
+      <div class="modal__body">
+        <p>A comprehensive enterprise fintech platform built for credit analysts, relationship managers, and lending institutions — consolidating lender–borrower management, financial data analysis, portfolio monitoring, risk scoring, and Databook intelligence into a single, unified product experience.</p>
+        <p>I led the end-to-end UX/UI design across all modules — conducting deep discovery with credit teams, risk analysts, and lending product managers to map complex financial workflows and translate them into clean, high-density interfaces that balance data richness with operational efficiency.</p>
+        <ul>
+          <li><strong>Lender–Borrower Management:</strong> Designed workflows for onboarding lenders and borrowers, managing loan applications, approval chains, disbursement tracking, and repayment schedules</li>
+          <li><strong>Financial Monitoring:</strong> Built real-time portfolio monitoring dashboards with alerts, covenant tracking, overdue flags, and health score indicators across the lending book</li>
+          <li><strong>Risk Calculation:</strong> Designed risk scoring interfaces that surface PD (Probability of Default), LGD, and exposure metrics with drill-down breakdowns for individual borrower profiles</li>
+          <li><strong>Databook Integration:</strong> Integrated financial intelligence from Databook — company financials, credit bureau data, GST returns, and MCA filings — directly into borrower profiles</li>
+          <li><strong>Financial Analysis:</strong> Designed ratio analysis, cash flow modelling, balance sheet review, and P&amp;L comparison modules for multi-year financial assessment</li>
+          <li><strong>Credit Reports &amp; Exports:</strong> Created structured credit appraisal report layouts with configurable sections, enabling one-click PDF export for credit committee presentations</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Modal 3: Gir Online Booking System -->
+    <div class="modal" id="modal-3">
+      <button class="modal__close" aria-label="Close"><svg viewBox="0 0 24 24">
+          <line x1="18" y1="6" x2="6" y2="18" />
+          <line x1="6" y1="6" x2="18" y2="18" />
+        </svg></button>
+      <div class="modal__thumb" style="overflow:hidden;padding:0;">
+        <img src="gir-slider.jpg" alt="Gir National Park" style="width:100%;height:100%;object-fit:cover;object-position:center top;">
+      </div>
+      <div class="modal__header">
+        <div class="modal__meta"><span>Gujarat Forest Dept. (GSLCS)</span><span>2023</span></div>
+        <h3 class="modal__title">Gir Online Booking System</h3>
+        <div class="modal__tags">Gov. Portal   / Booking System</div>
+      </div>
+      <div class="modal__body">
+        <p>The Gir Online Booking System is the only official permit booking platform for India's Asiatic Lion habitat — Gir National Park, Gujarat. Built for the Gujarat State Lion Conservation Society (GSLCS), the platform enables citizens and tourists to book jungle safaris, gypsy rides, bus safaris, and nature trail permits across five wildlife destinations entirely online.</p>
+        <p>I led the UX/UI design for this government portal — simplifying a previously paper-heavy, counter-based permit process into a seamless digital booking experience accessible to users with varying levels of digital literacy, across devices.</p>
+        <ul>
+          <li>Designed end-to-end booking flows for 5 wildlife zones: Gir Jungle Safari, Devalia Park (Gypsy &amp; Bus), Ambardi Safari Park, Girnar Nature Safari, and Velavadar National Park</li>
+          <li>Simplified a multi-step permit selection process into a guided 4-step booking wizard reducing drop-offs</li>
+          <li>Designed user registration, SSO login, and account management flows for repeat visitors</li>
+          <li>Created accessible, bilingual-ready UI supporting users with limited digital experience</li>
+          <li>Designed gallery, news &amp; downloads, DO's &amp; DON'Ts, and contact modules for the full portal</li>
+          <li>Delivered a mobile-first responsive design with a dedicated "Download Mobile App" CTA to drive app adoption</li>
+        </ul>
+        <a href="https://girlion.gujarat.gov.in/" target="_blank" rel="noopener" class="modal__link">Visit Live Portal →</a>
+      </div>
+    </div>
+
+    <!-- Modal 4: International Kite Festival -->
+    <div class="modal" id="modal-4">
+      <button class="modal__close" aria-label="Close"><svg viewBox="0 0 24 24">
+          <line x1="18" y1="6" x2="6" y2="18" />
+          <line x1="6" y1="6" x2="18" y2="18" />
+        </svg></button>
+      <div class="modal__thumb" style="overflow:hidden;padding:0;">
+        <img src="ikf-banner.jpg" alt="International Kite Festival Ahmedabad" style="width:100%;height:100%;object-fit:cover;object-position:center;">
+      </div>
+      <div class="modal__header">
+        <div class="modal__meta"><span>Gujarat Tourism — TCGL</span><span>2023</span></div>
+        <h3 class="modal__title">International Kite Festival</h3>
+        <div class="modal__tags">Tourism / Gov. Portal   / Event Website</div>
+      </div>
+      <div class="modal__body">
+        <p>The International Kite Festival (IKF) is one of India's most iconic cultural events, hosted annually in Ahmedabad since 1989 as part of the Uttarayan celebration. Organised by the Tourism Corporation of Gujarat Limited (TCGL), the festival draws master kite makers and flyers from over 50 countries to showcase extraordinary kite creations along the Sabarmati Riverfront and across 10+ cities in Gujarat.</p>
+        <p>I designed the official IKF web portal — a tourism-grade event website covering online registration, event schedules, city-wise venue details, a participating countries showcase, photo &amp; video gallery, travel planners, and press downloads — creating a rich, engaging experience for both domestic and international visitors.</p>
+        <ul>
+          <li>Designed the full portal: Home, About, Registration, Gallery, News, Planners, and Contact sections</li>
+          <li>Built a city-wise event locator covering 10+ venues: Ahmedabad, Surat, Rajkot, Kutch, Saputara, Porbandar, Bhavnagar and more</li>
+          <li>Created a participating countries showcase featuring 50+ nations including India, USA, Japan, Germany, France and Brazil</li>
+          <li>Designed a day-wise itinerary module with event schedules across multiple locations (10–15 Jan 2026)</li>
+          <li>Implemented a free, no-registration-required entry experience with clear visitor guidelines (10am–5pm timings)</li>
+          <li>Delivered a mobile-first responsive design to serve the high volume of on-ground mobile users during the festival</li>
+        </ul>
+        <a href="https://ikf.gujarattourism.com/index.html" target="_blank" rel="noopener" class="modal__link">Visit Live Portal →</a>
+      </div>
+    </div>
+
+    <!-- Modal 5: NFSU -->
+    <div class="modal" id="modal-5">
+      <button class="modal__close" aria-label="Close"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+      <div class="modal__thumb" style="background:#0a1628;display:flex;align-items:center;justify-content:center;">
+        <img src="nfsu-logo.png" alt="NFSU" style="max-height:100px;max-width:60%;object-fit:contain;filter:brightness(1.1);">
+      </div>
+      <div class="modal__header">
+        <div class="modal__meta"><span>National Forensic Sciences University — Govt. of India</span><span>2022</span></div>
+        <h3 class="modal__title">National Forensic Sciences University</h3>
+        <div class="modal__tags">Education / Gov. Portal   / Web Design</div>
+      </div>
+      <div class="modal__body">
+        <p>The National Forensic Sciences University (NFSU) is the world's first and only university dedicated entirely to forensic sciences, holding the status of an Institution of National Importance under the Government of India. With campuses across Gujarat, Delhi, Goa, Tripura, Bhopal, Guwahati, and an international campus in Uganda, NFSU serves thousands of students across forensic science, cyber security, and criminal justice programmes.</p>
+        <p>I designed the official NFSU web portal — creating a scalable, information-rich academic website that serves students, researchers, faculty, and institutional partners across India and abroad.</p>
+        <ul>
+          <li>Designed the full portal: About, Academics, Admissions, Research, Campus Life, News, and Alumni sections</li>
+          <li>Built a multi-campus information architecture covering 13+ campus locations across India and Uganda</li>
+          <li>Designed the Notice Board, PhD Admissions, and Academic Council modules for real-time updates</li>
+          <li>Created programme listings for UG, PG, and Doctoral courses across all forensic science disciplines</li>
+          <li>Delivered a responsive, accessible design aligned with GoI web accessibility guidelines (GIGW)</li>
+          <li>Designed testimonials from PM Narendra Modi and Home Minister Amit Shah for the institutional credibility section</li>
+        </ul>
+        <a href="https://www.nfsu.ac.in/" target="_blank" rel="noopener" class="modal__link">Visit Live Portal →</a>
+      </div>
+    </div>
+
+    <!-- Modal 6: SGGU -->
+    <div class="modal" id="modal-6">
+      <button class="modal__close" aria-label="Close"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+      <div class="modal__thumb" style="background:linear-gradient(135deg,#1a3a6e 0%,#2c5fa8 100%);display:flex;align-items:center;justify-content:center;">
+        <span style="font-family:serif;font-size:2.5rem;font-weight:800;color:#fff;letter-spacing:0.06em;">SGGU</span>
+      </div>
+      <div class="modal__header">
+        <div class="modal__meta"><span>GIPL / Government of Gujarat</span><span>2022</span></div>
+        <h3 class="modal__title">Shri Govind Guru University</h3>
+        <div class="modal__tags">Education / Gov. Portal   / Web Design</div>
+      </div>
+      <div class="modal__body">
+        <p>Shri Govind Guru University (SGGU) is a state university established by the Government of Gujarat, primarily serving the tribal and rural communities of South Gujarat, southern Rajasthan, and Madhya Pradesh. Named after the tribal reformer Govind Guru, the university offers undergraduate, postgraduate, and doctoral programmes across arts, science, commerce, and professional studies.</p>
+        <p>I designed the official university portal built on the GIPL (Guj Info Petro Limited) platform — creating a clean, accessible academic web experience for students, faculty, and administrative users across a geographically diverse user base.</p>
+        <ul>
+          <li>Designed the full university portal: Home, About, Academics, Admissions, Examination, and Contact sections</li>
+          <li>Created student-facing dashboards for exam results, timetables, and fee payment modules</li>
+          <li>Designed a multi-language-ready layout to support students from tribal and rural backgrounds</li>
+          <li>Built accessible, low-bandwidth-friendly UI for users in areas with limited internet connectivity</li>
+          <li>Delivered responsive designs compatible with mobile-first browsing patterns of rural student communities</li>
+        </ul>
+        <a href="https://sggu.gipl.in/Welcome.aspx" target="_blank" rel="noopener" class="modal__link">Visit Live Portal →</a>
+      </div>
+    </div>
+
+    <!-- Modal 7: Sardar Patel University -->
+    <div class="modal" id="modal-7">
+      <button class="modal__close" aria-label="Close"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+      <div class="modal__thumb" style="overflow:hidden;padding:0;">
+        <img src="spuv-banner.jpg" alt="Sardar Patel University" style="width:100%;height:100%;object-fit:cover;object-position:center;">
+      </div>
+      <div class="modal__header">
+        <div class="modal__meta"><span>Sardar Patel University, Vallabh Vidyanagar</span><span>2021</span></div>
+        <h3 class="modal__title">Sardar Patel University</h3>
+        <div class="modal__tags">Education / University Portal   / Web Design</div>
+      </div>
+      <div class="modal__body">
+        <p>Sardar Patel University (SPU) is a prestigious public state university located in Vallabh Vidyanagar, Gujarat, offering 4 UG programmes, 46 PG programmes, and 30 Doctoral (PhD) programmes, along with 3 PG Diploma programmes across science, humanities, social work, pharmaceutical science, and professional disciplines.</p>
+        <p>I designed the SPU web portal — a comprehensive academic platform serving students, faculty, researchers, and administrative staff, with a focus on clean information hierarchy, easy programme discovery, and streamlined access to notices, examinations, and career opportunities.</p>
+        <ul>
+          <li>Designed the complete portal: Home, About, Academics, Admissions, Examination, Research, and Students Corner</li>
+          <li>Created a programme catalogue for 80+ UG/PG/PhD courses with department-wise filtering</li>
+          <li>Designed the Notice Board and Employment Notification module handling frequent high-volume job postings</li>
+          <li>Built the Social Media integration section to connect students with official SPU channels</li>
+          <li>Delivered a responsive design supporting the university's office hours and contact workflows</li>
+          <li>Ensured compliance with university web standards and GoI GIGW accessibility guidelines</li>
+        </ul>
+        <a href="https://www.spuvvn.edu/" target="_blank" rel="noopener" class="modal__link">Visit Live Portal →</a>
+      </div>
+    </div>
+
+    <!-- Modal 8: Dahej SEZ -->
+    <div class="modal" id="modal-8">
+      <button class="modal__close" aria-label="Close"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+      <div class="modal__thumb" style="background:linear-gradient(135deg,#003366 0%,#005599 60%,#0077cc 100%);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px;">
+        <span style="font-family:serif;font-size:1.8rem;font-weight:800;color:#fff;letter-spacing:0.06em;">Dahej SEZ</span>
+        <span style="font-family:monospace;font-size:0.75rem;color:rgba(255,255,255,0.6);letter-spacing:0.12em;text-transform:uppercase;">GIDC · ONGC</span>
+      </div>
+      <div class="modal__header">
+        <div class="modal__meta"><span>Dahej SEZ Limited (GIDC + ONGC)</span><span>2021</span></div>
+        <h3 class="modal__title">Dahej SEZ Portal</h3>
+        <div class="modal__tags">Industrial / Gov. Portal / SEZ  </div>
+      </div>
+      <div class="modal__body">
+        <p>Dahej SEZ Limited (DSL) is a Multi-Product Special Economic Zone promoted jointly by the Gujarat Industrial Development Corporation (GIDC) and Oil &amp; Natural Gas Corporation (ONGC), located in Vagra Taluka, Bharuch district, Gujarat. DSL provides world-class industrial infrastructure including road, water, power, banking, fire-safety, and medical services to businesses operating within the SEZ.</p>
+        <p>I designed the official Dahej SEZ web portal — a professional government industrial portal serving businesses, investors, and government stakeholders with information on SEZ services, tenders, news, and portal login facilities.</p>
+        <ul>
+          <li>Designed the full portal: Home, About DSL, Infrastructure Services, News &amp; Announcements, Tenders, and Contact sections</li>
+          <li>Created service module pages for Road, Water, Power, Bank, Fire-Safety, and Medical Services</li>
+          <li>Designed the News &amp; Announcements and Tenders modules for real-time business communications</li>
+          <li>Built a Portal Login gateway for registered businesses and administrators within the SEZ</li>
+          <li>Designed the GIDC and ONGC promoter information sections with company profiles</li>
+          <li>Delivered an accessible, bilingual-ready layout for both Indian and international business users</li>
+        </ul>
+        <a href="http://www.dahejsez.com/" target="_blank" rel="noopener" class="modal__link">Visit Live Portal →</a>
+      </div>
+    </div>
+
+    <!-- Modal 9: AUDA -->
+    <div class="modal" id="modal-9">
+      <button class="modal__close" aria-label="Close"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+      <div class="modal__thumb" style="background:#f0f4ff;display:flex;align-items:center;justify-content:center;">
+        <img src="auda-logo.png" alt="AUDA" style="max-height:90px;max-width:60%;object-fit:contain;">
+      </div>
+      <div class="modal__header">
+        <div class="modal__meta"><span>Ahmedabad Urban Development Authority — Govt. of Gujarat</span><span>2020</span></div>
+        <h3 class="modal__title">AUDA — Urban Development Portal</h3>
+        <div class="modal__tags">Urban Planning / Gov. Portal   / Web Design</div>
+      </div>
+      <div class="modal__body">
+        <p>Ahmedabad Urban Development Authority (AUDA) was established on 1st February 1978 to implement long-term urban development schemes in areas outside the Ahmedabad Municipal Corporation limits. Over four decades, AUDA has transformed the physical infrastructure of the Ahmedabad region, managing urban planning, residential schemes, road development, and civic infrastructure for millions of citizens.</p>
+        <p>I designed the AUDA official web portal — a citizen-facing government platform providing access to urban planning services, property information, booking facilities, tenders, and emergency helplines.</p>
+        <ul>
+          <li>Designed the full portal: Home, About, News/Notifications, Gallery, Important Quick Links, and Contact sections</li>
+          <li>Created the Auditorium Booking module for Shela, Dehgam &amp; Mahemdavad venues</li>
+          <li>Designed the AUDA Plot Booking online facility for residential and commercial plots</li>
+          <li>Built the One Time Settlement Yojana Online Payment module for property regularisation</li>
+          <li>Designed Property Tax, Project Information Dashboard, Authority Certificate, and Tender Notice modules</li>
+          <li>Delivered an accessible, mobile-responsive portal aligned with Govt. of Gujarat web standards</li>
+        </ul>
+        <a href="https://www.auda.org.in/" target="_blank" rel="noopener" class="modal__link">Visit Live Portal →</a>
+      </div>
+    </div>
+
+    <!-- Modal 10: GMB Ports -->
+    <div class="modal" id="modal-10">
+      <button class="modal__close" aria-label="Close"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+      <div class="modal__thumb" style="overflow:hidden;padding:0;">
+        <img src="gmb-banner.jpg" alt="GMB Ports Gujarat" style="width:100%;height:100%;object-fit:cover;object-position:center;">
+      </div>
+      <div class="modal__header">
+        <div class="modal__meta"><span>Gujarat Maritime Board — Govt. of Gujarat</span><span>2020</span></div>
+        <h3 class="modal__title">GMB Ports Portal</h3>
+        <div class="modal__tags">Maritime / Gov. Portal / Infrastructure  </div>
+      </div>
+      <div class="modal__body">
+        <p>Gujarat Maritime Board (GMB) manages 44 minor ports along Gujarat's 2340 km coastline — the longest among all maritime states of India. GMB handles approximately 484 MMT of cargo annually (2025–26), representing about 53% of total cargo handled by all major ports in the country combined. Gujarat's strategic location makes it the nearest maritime outlet to the Middle East, Africa, and Europe.</p>
+        <p>I designed the official GMB web portal — a large-scale government maritime infrastructure platform serving port operators, shipping companies, businesses, and the general public with comprehensive port management information, tariffs, tenders, and ferry booking services.</p>
+        <ul>
+          <li>Designed the full portal: About, Doing Business, Infrastructure, Achievements, and Help Desk sections</li>
+          <li>Created the GMB Port Operations &amp; Financial Management System information module</li>
+          <li>Designed the Infrastructure section covering 44 GMB-owned ports, greenfield ports, captive &amp; private jetties, shipyards, and ship recycling yards</li>
+          <li>Built the Ghogha–Hazira RO-PAX Ferry Service ticket booking integration</li>
+          <li>Designed the Tariff module — Schedule of Port Charges for all port services</li>
+          <li>Delivered an accessible, multilingual-ready portal supporting domestic and international shipping stakeholders</li>
+        </ul>
+        <a href="https://gmbports.org/" target="_blank" rel="noopener" class="modal__link">Visit Live Portal →</a>
+      </div>
+    </div>
+
+    <!-- Modal 11: HRMS System -->
+    <div class="modal" id="modal-11">
+      <button class="modal__close" aria-label="Close"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+      <div class="modal__thumb" style="background:linear-gradient(135deg,#1a4080 0%,#2d6abf 60%,#4a90d9 100%);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px;">
+        <span style="font-family:serif;font-size:1.6rem;font-weight:800;color:#fff;letter-spacing:0.04em;">HRMS</span>
+        <span style="font-family:monospace;font-size:0.7rem;color:rgba(255,255,255,0.65);letter-spacing:0.14em;text-transform:uppercase;">Human Resource Management System</span>
+      </div>
+      <div class="modal__header">
+        <div class="modal__meta"><span>Enterprise Product</span><span>2019</span></div>
+        <h3 class="modal__title">HRMS System</h3>
+        <div class="modal__tags">Enterprise / HRMS / UI/UX / Product Design</div>
+      </div>
+      <div class="modal__body">
+        <p>An enterprise-grade Human Resource Management System (HRMS) designed to streamline and automate the full employee lifecycle — from onboarding through exit — for mid-to-large organisations. The system covers recruitment, attendance, payroll, leave management, performance reviews, and HR analytics in a unified, role-based platform.</p>
+        <p>I led the end-to-end UX/UI design for this HRMS — conducting stakeholder interviews with HR managers, payroll teams, and employees to map complex workflows, then simplifying them into intuitive, task-focused interfaces that reduced administrative overhead significantly.</p>
+        <ul>
+          <li>Designed 8 core modules: Onboarding, Attendance, Leave Management, Payroll, Performance Review, Recruitment, Employee Directory, and HR Analytics</li>
+          <li>Created role-based access dashboards for Admin, HR Manager, Team Lead, and Employee roles</li>
+          <li>Designed a mobile-first attendance marking and leave application flow for field employees</li>
+          <li>Built a payroll processing workflow with approval chains, reducing processing time by 45%</li>
+          <li>Designed the performance review module with goal-setting, self-assessment, and manager feedback flows</li>
+          <li>Delivered a comprehensive design system of 80+ HRMS-specific components for consistent UI across all modules</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Modal 12: University Result System -->
+    <div class="modal" id="modal-12">
+      <button class="modal__close" aria-label="Close"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+      <div class="modal__thumb" style="background:linear-gradient(135deg,#1a3a2e 0%,#2a6048 60%,#3d8c6a 100%);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:12px;">
+        <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+        <span style="font-family:monospace;font-size:0.72rem;color:rgba(255,255,255,0.7);letter-spacing:0.14em;text-transform:uppercase;">University Result System</span>
+      </div>
+      <div class="modal__header">
+        <div class="modal__meta"><span>University / Education Sector</span><span>2019</span></div>
+        <h3 class="modal__title">University Result System</h3>
+        <div class="modal__tags">Education / Result Portal   / Web Design</div>
+      </div>
+      <div class="modal__body">
+        <p>A comprehensive University Result Management and Publication System designed to modernise the academic result declaration process for universities — replacing paper-based and counter-driven result distribution with a fully digital, self-service portal accessible to students 24/7 from any device.</p>
+        <p>I led the UX/UI design for this system — conducting research with students, examination department staff, and university administrators to map the result publication lifecycle and design intuitive interfaces that reduce helpdesk load and improve student experience during result season.</p>
+        <ul>
+          <li>Designed the student-facing result lookup portal with roll number, exam, and semester-based search</li>
+          <li>Created digital marksheet and academic transcript views with print and PDF download functionality</li>
+          <li>Designed the Examination Department admin panel for result upload, verification, and publication workflows</li>
+          <li>Built grade summary dashboards showing subject-wise marks, CGPA, and pass/fail status clearly</li>
+          <li>Designed revaluation and re-checking request flows with status tracking for students</li>
+          <li>Delivered a mobile-first, low-bandwidth-friendly design to serve students in semi-urban and rural areas</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Modal 13: Citizen Service Center -->
+    <div class="modal" id="modal-13">
+      <button class="modal__close" aria-label="Close"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+      <div class="modal__thumb" style="background:linear-gradient(135deg,#5a2d82 0%,#8040b0 60%,#a868d8 100%);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:12px;">
+        <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        <span style="font-family:monospace;font-size:0.72rem;color:rgba(255,255,255,0.7);letter-spacing:0.14em;text-transform:uppercase;">Citizen Service Center</span>
+      </div>
+      <div class="modal__header">
+        <div class="modal__meta"><span>Government of Gujarat</span><span>2018</span></div>
+        <h3 class="modal__title">Citizen Service Center</h3>
+        <div class="modal__tags">Gov. Portal / Citizen Services   / Web Design</div>
+      </div>
+      <div class="modal__body">
+        <p>A unified government citizen services portal designed to bring all essential civic services under one digital roof — empowering residents of Gujarat to access government certificates, make utility payments, file grievances, track applications, and avail welfare schemes without visiting physical offices.</p>
+        <p>I led the UX design for this citizen-centric portal — conducting field research with citizens, front-desk officers, and service centre operators to understand pain points in the existing counter-based system, then designing a streamlined digital experience that reduces service delivery time and increases transparency.</p>
+        <ul>
+          <li>Designed the full portal: Service Directory, Apply Online, Track Application, Payments, Grievances, and Help sections</li>
+          <li>Created service request flows for birth/death certificates, income certificates, domicile, caste, and residential proofs</li>
+          <li>Designed the application tracking module with real-time status updates and SMS/email notification triggers</li>
+          <li>Built the online utility payment gateway for electricity, water, and property tax with receipt generation</li>
+          <li>Designed the Grievance Redressal System with ticket creation, escalation, and resolution workflows</li>
+          <li>Delivered an accessible, bilingual (English/Gujarati) design serving citizens of all literacy levels across urban and rural Gujarat</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+
+  <footer class="wrap">
+    <span>© 2026 Krunal Patel</span>
+    <span>Product Design Manager · UI/UX · Product · AI-Driven Design</span>
+  </footer>
+
+  <script>
+    const revealEls = document.querySelectorAll('.reveal');
+    if ('IntersectionObserver' in window) {
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            io.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12 });
+      revealEls.forEach(el => io.observe(el));
+    } else {
+      revealEls.forEach(el => el.classList.add('is-visible'));
+    }
+
+    // Modal logic
+    const backdrop = document.getElementById('modalBackdrop');
+    document.querySelectorAll('[data-modal]').forEach(card => {
+      card.addEventListener('click', e => {
+        e.preventDefault();
+        const id = card.getAttribute('data-modal');
+        backdrop.querySelectorAll('.modal').forEach(m => m.hidden = true);
+        const target = document.getElementById(id);
+        if (target) { target.hidden = false; }
+        backdrop.classList.add('is-open');
+        document.body.style.overflow = 'hidden';
+      });
+    });
+    backdrop.querySelectorAll('.modal__close').forEach(btn => {
+      btn.addEventListener('click', closeModal);
+    });
+    backdrop.addEventListener('click', e => { if (e.target === backdrop) closeModal(); });
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+    function closeModal() {
+      backdrop.classList.remove('is-open');
+      document.body.style.overflow = '';
+    }
+    // Hide all modals initially
+    backdrop.querySelectorAll('.modal').forEach(m => m.hidden = true);
+
+    const sections = document.querySelectorAll('main section[id]');
+    const navLinks = document.querySelectorAll('.nav__links a');
+    if ('IntersectionObserver' in window) {
+      const navObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            navLinks.forEach(link => {
+              link.classList.toggle('is-active', link.dataset.section === entry.target.id);
+            });
+          }
+        });
+      }, { threshold: 0.4 });
+      sections.forEach(sec => navObserver.observe(sec));
+    }
+
+  </script>
+
+</body>
+
+</html>
