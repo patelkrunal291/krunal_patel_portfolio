@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Krunal Patel — Product Design Manager | UI/UX + Front-End</title>
+<meta name="description" content="Krunal Patel — Product Design Manager with 12+ years of experience across product design, UI/UX, fintech, design systems and front-end implementation.">
+<meta property="og:title" content="Krunal Patel — Product Design Manager">
+<meta property="og:description" content="Product design, UX strategy, fintech, design systems and front-end implementation.">
+<meta name="theme-color" content="#0b0d10">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="icon" type="image/png" sizes="48x48" href="favicon-48.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0b0d10; --panel:#11151a; --panel2:#171c22; --text:#f3f5f7; --muted:#a6adb7;
+  --line:rgba(255,255,255,.11); --accent:#8fb8ff; --accent2:#d6e4ff; --max:1240px;
+  --gutter:clamp(20px,4vw,64px); --display:"Space Grotesk",sans-serif; --body:"DM Sans",sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:var(--body);line-height:1.65}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.18;background-image:radial-gradient(rgba(255,255,255,.12) 1px,transparent 1px);background-size:28px 28px;mask-image:linear-gradient(to bottom,black,transparent 70%)}
+a{color:inherit;text-decoration:none} button{font:inherit}
+.wrap{max-width:var(--max);margin:auto;padding:0 var(--gutter)}
+section{padding:120px 0;border-top:1px solid var(--line)}
+.nav{position:fixed;top:0;left:0;right:0;z-index:20;background:rgba(11,13,16,.78);backdrop-filter:blur(18px);border-bottom:1px solid var(--line)}
+.nav .wrap{height:72px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.logo{font-family:var(--display);font-weight:700;letter-spacing:-.03em}
+.navlinks{display:flex;gap:26px;color:var(--muted);font-size:13px}
+.navlinks a:hover{color:#fff}
+.navcta,.btn{border:1px solid var(--line);padding:11px 17px;border-radius:999px;font-size:13px;transition:.25s}
+.navcta:hover,.btn:hover{border-color:var(--accent);background:rgba(143,184,255,.09)}
+.hero{min-height:100vh;display:flex;align-items:center;padding-top:140px;border-top:0;position:relative;overflow:hidden}
+.hero:after{content:"";position:absolute;width:560px;height:560px;border-radius:50%;right:-160px;top:100px;background:radial-gradient(circle,rgba(87,132,220,.24),transparent 68%);filter:blur(20px)}
+.eyebrow,.kicker{font-size:12px;text-transform:uppercase;letter-spacing:.14em;color:var(--accent);font-weight:600}
+.hero h1{font-family:var(--display);font-size:clamp(3.5rem,8vw,7.8rem);line-height:.92;letter-spacing:-.065em;max-width:1000px;margin:20px 0 30px}
+.hero h1 span{color:var(--accent)}
+.hero p{font-size:clamp(1.05rem,2vw,1.35rem);color:var(--muted);max-width:760px}
+.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:38px}
+.btn.primary{background:#f3f5f7;color:#0b0d10;border-color:#f3f5f7;font-weight:600}.btn.primary:hover{background:var(--accent2)}
+.hero-meta{display:flex;gap:28px;flex-wrap:wrap;margin-top:55px;color:var(--muted);font-size:13px}.hero-meta strong{color:#fff;font-size:22px;display:block;font-family:var(--display)}
+.section-head{display:flex;justify-content:space-between;gap:30px;align-items:end;margin-bottom:55px}
+.section-head h2{font-family:var(--display);font-size:clamp(2.5rem,5vw,5rem);letter-spacing:-.05em;line-height:1}
+.section-head p{max-width:520px;color:var(--muted)}
+.about{display:grid;grid-template-columns:1.25fr .75fr;gap:70px}
+.about-copy{font-size:clamp(1.15rem,2vw,1.55rem);line-height:1.55;max-width:800px}.about-copy p+p{margin-top:24px}
+.facts{display:grid;grid-template-columns:1fr 1fr;gap:24px;border-top:1px solid var(--line);padding-top:24px}.fact small{display:block;color:var(--muted);font-size:11px;text-transform:uppercase;letter-spacing:.1em}.fact strong{display:block;margin-top:5px}
+.process{display:grid;grid-template-columns:repeat(5,1fr);border:1px solid var(--line)}.step{padding:24px;border-right:1px solid var(--line);min-height:150px}.step:nth-child(5){border-right:0}.step b{font-family:var(--display);font-size:24px}.step span{display:block;color:var(--accent);font-size:11px;margin-bottom:18px}.step p{color:var(--muted);font-size:13px}
+.case-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+.case{background:linear-gradient(145deg,var(--panel2),var(--panel));border:1px solid var(--line);border-radius:24px;overflow:hidden;min-height:430px;display:flex;flex-direction:column;transition:.3s}.case:hover{transform:translateY(-6px);border-color:rgba(143,184,255,.4)}
+.case-visual{min-height:240px;display:flex;align-items:center;justify-content:center;padding:35px;position:relative;overflow:hidden;background:linear-gradient(135deg,#101826,#1b2b45)}
+.case-visual:before{content:"";position:absolute;width:250px;height:250px;border-radius:50%;background:rgba(143,184,255,.18);filter:blur(8px)}
+.mock{position:relative;width:min(90%,460px);border:1px solid rgba(255,255,255,.18);border-radius:14px;background:#f4f7fb;color:#15202e;padding:18px;box-shadow:0 24px 60px rgba(0,0,0,.35)}
+.mock .bar{height:8px;width:42%;background:#9bb7dd;border-radius:8px;margin-bottom:16px}.mock .row{display:grid;grid-template-columns:1.4fr 1fr;gap:10px}.mock .box{height:65px;background:#dfe8f4;border-radius:8px}.mock .box.tall{height:125px}
+.case-body{padding:28px;display:flex;flex-direction:column;flex:1}.case-meta{font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--accent)}.case h3{font-family:var(--display);font-size:30px;letter-spacing:-.035em;margin:10px 0}.case p{color:var(--muted);max-width:650px}.case-footer{margin-top:auto;padding-top:24px;color:#dbe6f8;font-size:13px}
+.feature{grid-column:1/-1;min-height:500px}.feature .case-visual{min-height:310px}
+.case-visual img{position:relative;z-index:1;width:100%;height:100%;object-fit:cover;object-position:top}
+.case-detail{display:grid;grid-template-columns:180px 1fr;gap:45px;padding:30px 0;border-top:1px solid var(--line)}.case-detail h3{font-family:var(--display);font-size:28px}.case-detail p{color:var(--muted);max-width:780px}
+.insight-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.insight{padding:28px;border:1px solid var(--line);background:var(--panel);border-radius:18px}.insight span{color:var(--accent);font-size:11px;text-transform:uppercase;letter-spacing:.1em}.insight h3{font-family:var(--display);font-size:24px;margin:12px 0}.insight p{color:var(--muted);font-size:14px}
+.code-flow{display:flex;align-items:stretch;flex-wrap:wrap;border:1px solid var(--line)}.code-step{flex:1;min-width:150px;padding:25px;border-right:1px solid var(--line)}.code-step:last-child{border-right:0}.code-step small{color:var(--accent);font-size:10px;text-transform:uppercase}.code-step strong{display:block;font-family:var(--display);font-size:19px;margin-top:10px}
+.skills{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}.skill{padding:26px;border-top:1px solid var(--line)}.skill h3{font-family:var(--display);font-size:22px;margin-bottom:18px}.skill li{color:var(--muted);font-size:14px;margin:7px 0}
+.timeline{border-left:1px solid var(--line);margin-left:12px}.role{padding:0 0 45px 35px;position:relative}.role:before{content:"";position:absolute;left:-5px;top:7px;width:9px;height:9px;border-radius:50%;background:var(--bg);border:2px solid var(--accent)}.role time{font-size:11px;color:var(--accent);letter-spacing:.1em}.role h3{font-family:var(--display);font-size:27px;margin:7px 0}.role .org{color:#dce6f5}.role p{color:var(--muted);max-width:800px;margin-top:10px}
+.contact{padding:150px 0 90px}.contact h2{font-family:var(--display);font-size:clamp(3.2rem,8vw,8rem);line-height:.9;letter-spacing:-.065em;max-width:1000px}.contact h2 span{color:var(--accent)}.contact p{color:var(--muted);font-size:1.15rem;margin:30px 0}.footer{border-top:1px solid var(--line);padding:28px 0;color:var(--muted);font-size:12px;display:flex;justify-content:space-between;gap:20px}
+@media(max-width:900px){.navlinks{display:none}.about{grid-template-columns:1fr}.process{grid-template-columns:1fr 1fr}.step:nth-child(2){border-right:0}.step:nth-child(3){border-top:1px solid var(--line)}.case-grid{grid-template-columns:1fr}.feature{grid-column:auto}.skills{grid-template-columns:1fr 1fr}.section-head{display:block}.section-head p{margin-top:20px}}
+@media(max-width:600px){section{padding:85px 0}.hero h1{font-size:3.4rem}.process,.skills,.insight-grid{grid-template-columns:1fr}.step{border-right:0;border-bottom:1px solid var(--line)}.step:last-child{border-bottom:0}.facts{grid-template-columns:1fr}.case-detail{grid-template-columns:1fr;gap:8px}.footer{flex-direction:column}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+</style>
+</head>
+<body>
+<nav class="nav">
+  <div class="wrap">
+    <a class="logo" href="#top">Krunal Patel</a>
+    <div class="navlinks">
+      <a href="#about">About</a><a href="#process">Process</a><a href="#work">Work</a><a href="#code">Design + Code</a><a href="#experience">Experience</a>
+    </div>
+    <a class="navcta" href="#contact">Let's talk</a>
+  </div>
+</nav>
+
+<main id="top">
+<section class="hero">
+  <div class="wrap">
+    <div class="eyebrow">Product Design Manager · Senior Product Designer · UI/UX Lead</div>
+    <h1>Designing digital products that <span>solve real problems.</span></h1>
+    <p>I combine strategic product thinking, UX research, interface design, design systems and front-end understanding to turn complex product problems into clear, scalable experiences.</p>
+    <div class="actions"><a class="btn primary" href="#work">View case studies ↗</a><a class="btn" href="#contact">Let's work together</a><a class="btn" href="Krunal_Patel_Resume.pdf" download>Download resume ↓</a></div>
+    <div class="hero-meta">
+      <div><strong>12+</strong>Years in design</div><div><strong>8+</strong>Years in fintech</div><div><strong>Figma → UI</strong>Design + implementation</div><div><strong>AI</strong>Assisted workflows</div>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+<div class="wrap">
+  <div class="section-head"><div><div class="kicker">01 — About</div><h2>Strategy meets craft.</h2></div><p>A senior design profile built around product outcomes, not just polished screens.</p></div>
+  <div class="about">
+    <div class="about-copy">
+      <p>I'm Krunal Patel, a Product Design Manager with 12+ years of experience across product design, UI/UX, web experiences and front-end implementation.</p>
+      <p>My recent work spans complex fintech ecosystems, enterprise workflows, financial intelligence, AI-assisted experiences and scalable design systems. I work across discovery, UX strategy, interaction design, visual systems and design-to-development collaboration.</p>
+    </div>
+    <div class="facts">
+      <div class="fact"><small>Current role</small><strong>Product Design Manager</strong></div>
+      <div class="fact"><small>Location</small><strong>Ahmedabad, India</strong></div>
+      <div class="fact"><small>Education</small><strong>B.E. Computer Engineering</strong></div>
+      <div class="fact"><small>Focus</small><strong>Product Design + AI</strong></div>
+      <div class="fact"><small>Email</small><strong>patelkrunal291@gmail.com</strong></div>
+      <div class="fact"><small>Phone</small><strong>+91 99049 21328</strong></div>
+    </div>
+  </div>
+</div>
+</section>
+
+<section id="process">
+<div class="wrap">
+  <div class="section-head"><div><div class="kicker">02 — Process</div><h2>From ambiguity to production.</h2></div><p>A practical end-to-end process that adapts to the problem, product maturity and team.</p></div>
+  <div class="process">
+    <div class="step"><span>01</span><b>Discover</b><p>Research, stakeholder conversations, competitive and product analysis.</p></div>
+    <div class="step"><span>02</span><b>Define</b><p>Frame the problem, map journeys, identify priorities and constraints.</p></div>
+    <div class="step"><span>03</span><b>Design</b><p>Flows, wireframes, prototypes, visual systems and interaction patterns.</p></div>
+    <div class="step"><span>04</span><b>Validate</b><p>Prototype testing, feedback loops, design critique and iteration.</p></div>
+    <div class="step"><span>05</span><b>Deliver</b><p>Design systems, specs, front-end collaboration, QA and measurement.</p></div>
+  </div>
+</div>
+</section>
+
+<section id="work">
+<div class="wrap">
+  <div class="section-head"><div><div class="kicker">03 — Selected work</div><h2>Complex products, simplified.</h2></div><p>Fintech is the strongest case-study thread in the source portfolio, supported by public-sector, education and tourism work.</p></div>
+  <div class="case-grid">
+    <a class="case feature" href="FintechAI_Case_Study.html" aria-label="Open the Fintech AI Product case study">
+      <div class="case-visual" style="padding:0">
+        <img src="fintechai-cover-blurred.jpg" alt="Fintech AI Product — Credit Workbench search screen with sensitive values blurred" loading="lazy">
+      </div>
+      <div class="case-body"><div class="case-meta">Fintech · AI Product · Enterprise</div><h3>Fintech AI Product</h3><p>An intelligent fintech assistant designed to surface AI-driven insights, automate repetitive workflows and personalize financial analysis for enterprise users.</p><div class="case-footer">View case study ↗ · End-to-end UX/UI · AI interaction patterns · AI content design system · analyst &amp; finance-team research</div></div>
+    </a>
+
+    <a class="case" href="Databook_Case_Study.html" aria-label="Open the Databook case study">
+      <div class="case-visual" style="padding:0"><img src="databook-cover-blurred.jpg" alt="Databook — company profile screen with sensitive values blurred" loading="lazy"></div>
+      <div class="case-body"><div class="case-meta">Fintech · Data Product</div><h3>Databook</h3><p>Unified financial intelligence experience combining company insights, credit data, financial statements, compliance flags and market analytics.</p><div class="case-footer">View case study ↗ · Information architecture · High-density UI · Entity cards · Search &amp; comparison</div></div>
+    </a>
+
+    <a class="case" href="FintechSuite_Case_Study.html" aria-label="Open the Fintech Product Suite case study">
+      <div class="case-visual" style="padding:0">
+        <img src="placerequest-cover-blurred.jpg" alt="Fintech Product Suite — unified Place Request flow with sensitive values blurred" loading="lazy">
+      </div>
+      <div class="case-body"><div class="case-meta">Fintech · Credit · Risk</div><h3>Fintech Product Suite</h3><p>Enterprise workflows spanning lender–borrower management, financial monitoring, risk calculation, Databook intelligence and financial analysis.</p><div class="case-footer">View case study ↗ · Credit workflows · Portfolio monitoring · Risk scoring · Financial analysis</div></div>
+    </a>
+
+    <a class="case" href="Gir_Case_Study.html" aria-label="Open the Gir Online Booking System case study">
+      <div class="case-visual" style="padding:0"><img src="gir-cover.jpg" alt="Asiatic lion at a waterhole in Gir National Park" loading="lazy"></div>
+      <div class="case-body"><div class="case-meta">Government · Booking</div><h3>Gir Online Booking System</h3><p>Online permit booking experience for Gir Jungle Safari, Devalia Park, Girnar Nature Safari and Velavadar National Park.</p><div class="case-footer">View case study ↗ · Portal UX · Booking flows · Information architecture</div></div>
+    </a>
+
+    <a class="case" href="KiteFestival_Case_Study.html" aria-label="Open the International Kite Festival case study">
+      <div class="case-visual" style="padding:0"><img src="kite-cover.jpg" alt="Colourful kites flying over the International Kite Festival grounds in Ahmedabad" loading="lazy"></div>
+      <div class="case-body"><div class="case-meta">Tourism · Event Website</div><h3>International Kite Festival</h3><p>Official portal for Gujarat's International Kite Festival — online registration, event itinerary, gallery and venue information across 10+ cities.</p><div class="case-footer">View case study ↗ · Event portal UX · City-wise locator · Countries showcase</div></div>
+    </a>
+
+    <a class="case" href="AUDA_Case_Study.html" aria-label="Open the AUDA Urban Development Portal case study">
+      <div class="case-visual" style="padding:0"><img src="auda-cover.jpg" alt="AUDA — Ahmedabad Urban Development Authority brand mark" loading="lazy"></div>
+      <div class="case-body"><div class="case-meta">Government · Urban Planning</div><h3>AUDA — Urban Development Portal</h3><p>Portal for Ahmedabad Urban Development Authority — established 1978, managing urban planning, plot booking, auditorium booking and property services.</p><div class="case-footer">View case study ↗ · Civic services UX · Plot &amp; auditorium booking · Payments</div></div>
+    </a>
+
+    <a class="case" href="HRMS_Case_Study.html" aria-label="Open the HRMS System case study">
+      <div class="case-visual" style="padding:0"><img src="hrms-cover.jpg" alt="HRMS — Human Resource Management System brand mark" loading="lazy"></div>
+      <div class="case-body"><div class="case-meta">Enterprise · HRMS</div><h3>HRMS System</h3><p>Enterprise Human Resource Management System covering employee onboarding, attendance, payroll, leave management and performance review workflows.</p><div class="case-footer">View case study ↗ · Role-based dashboards · Payroll workflow · Design system</div></div>
+    </a>
+
+    <a class="case" href="University_Case_Study.html" aria-label="Open the University Portal case study">
+      <div class="case-visual" style="padding:0"><img src="university-cover.jpg" alt="University Portal illustration" loading="lazy"></div>
+      <div class="case-body"><div class="case-meta">Education · University Portals</div><h3>University Portal</h3><p>Student Corner, results, notices and admissions — a reusable university portal pattern deployed across several institutions, including Sardar Patel University, Shri Govind Guru University and NFSU.</p><div class="case-footer">View case study ↗ · Student Corner · Results &amp; notices · Multi-campus scale</div></div>
+    </a>
+  </div>
+</div>
+</section>
+
+<section>
+<div class="wrap">
+  <div class="section-head"><div><div class="kicker">04 — Fintech case study</div><h2>Design decisions, not decoration.</h2></div><p>The following details are grounded in the uploaded portfolio HTML; quantitative claims are kept only where that source explicitly states them.</p></div>
+  <div class="case-detail"><div class="kicker">Challenge</div><div><h3>Make complex financial information actionable.</h3><p>Fintech workflows combine dense data, risk signals, multiple entities and operational decisions. The design focus was to organize this complexity without removing the depth enterprise users need.</p></div></div>
+  <div class="case-detail"><div class="kicker">Research</div><div><h3>Understand analysts, finance teams and credit workflows.</h3><p>The source describes user research with analysts and finance teams, discovery with credit teams, risk analysts and lending product managers, plus mapping of complex AI interaction patterns.</p></div></div>
+  <div class="case-detail"><div class="kicker">Decisions</div><div><h3>Use progressive disclosure, contextual intelligence and reusable patterns.</h3><p>The work included AI entry points, onboarding, contextual insight panels, entity cards, unified search, side-by-side comparison and financial/risk modules.</p></div></div>
+  <div class="case-detail"><div class="kicker">Outcomes</div><div><h3>Source-reported impact.</h3><p>The uploaded portfolio reports a 35% reduction in decision time for the AI product, 25% post-launch engagement growth, 38% lower cognitive overload for first-time Databook users, and a design system that improved delivery consistency/speed by 30%.</p></div></div>
+</div>
+</section>
+
+<section id="code">
+<div class="wrap">
+  <div class="section-head"><div><div class="kicker">05 — Design + Code</div><h2>From Figma to production.</h2></div><p>I bridge design and engineering through component thinking, responsive implementation and design QA.</p></div>
+  <div class="code-flow">
+    <div class="code-step"><small>01</small><strong>Figma</strong></div><div class="code-step"><small>02</small><strong>Design system</strong></div><div class="code-step"><small>03</small><strong>Component specs</strong></div><div class="code-step"><small>04</small><strong>HTML / CSS</strong></div><div class="code-step"><small>05</small><strong>Responsive UI</strong></div><div class="code-step"><small>06</small><strong>QA + handoff</strong></div>
+  </div>
+  <div class="insight-grid" style="margin-top:28px">
+    <div class="insight"><span>Implementation</span><h3>Pixel-accurate UI</h3><p>Responsive interfaces with reusable components and close collaboration with front-end developers.</p></div>
+    <div class="insight"><span>Systems</span><h3>Scalable foundations</h3><p>Tokens, components, patterns and documentation that help teams maintain consistency.</p></div>
+    <div class="insight"><span>Quality</span><h3>Design QA</h3><p>Reviewing production implementation against intent across breakpoints, states and interaction details.</p></div>
+  </div>
+</div>
+</section>
+
+<section>
+<div class="wrap">
+  <div class="section-head"><div><div class="kicker">06 — AI + Design</div><h2>AI accelerates the workflow. Judgment stays human.</h2></div></div>
+  <div class="insight-grid">
+    <div class="insight"><span>Research</span><h3>Synthesize faster</h3><p>Use AI to organize information, summarize inputs and accelerate exploration while retaining human interpretation.</p></div>
+    <div class="insight"><span>Ideation</span><h3>Explore more directions</h3><p>Rapidly test concepts, content approaches and interaction possibilities before investing in high-fidelity work.</p></div>
+    <div class="insight"><span>Delivery</span><h3>Reduce repetitive work</h3><p>Use AI-assisted workflows to speed up iteration, documentation and design-to-development tasks.</p></div>
+  </div>
+</div>
+</section>
+
+<section id="experience">
+<div class="wrap">
+  <div class="section-head"><div><div class="kicker">07 — Experience</div><h2>12+ years of progression.</h2></div></div>
+  <div class="timeline">
+    <div class="role"><time>APR 2025 — PRESENT</time><h3>Product Design Manager</h3><div class="org">Accumn – A Yubi Company, Ahmedabad</div><p>Leads and mentors cross-functional teams, drives user-centered UI/UX and product design strategy, and develops scalable design systems and AI-driven product experiences.</p></div>
+    <div class="role"><time>APR 2023 — MAR 2025</time><h3>Lead Designer</h3><div class="org">Accumn – A Yubi Company, Ahmedabad</div><p>Led design execution across multiple product lines, owned end-to-end delivery and scaled design-system components.</p></div>
+    <div class="role"><time>JAN 2019 — MAR 2023</time><h3>Web Designer</h3><div class="org">Accumn – A Yubi Company, Ahmedabad</div><p>Designed wireframes, prototypes and responsive web/mobile interfaces while working closely with front-end developers.</p></div>
+    <div class="role"><time>MAR 2016 — JAN 2019</time><h3>Web Designer</h3><div class="org">Aarvi Encon Limited (GIPL), Gandhinagar</div><p>Designed web and mobile experiences, branding assets and marketing creatives, including a company-wide rebranding initiative.</p></div>
+    <div class="role"><time>OCT 2015 — FEB 2016</time><h3>Web Designer & Developer</h3><div class="org">AEON Software Pvt. Ltd. (R.M.C), Rajkot</div><p>Designed and developed responsive websites and landing pages, ensuring usability, accessibility and performance optimization across deliverables while working closely with developers on accurate design execution.</p></div>
+    <div class="role"><time>AUG 2014 — SEP 2015</time><h3>IT Software Engineer</h3><div class="org">Galaxy Bearings Limited, Rajkot</div><p>Developed and maintained system and embedded software, debugging and resolving system and networking issues to maintain operational uptime.</p></div>
+    <div class="role"><time>SEP 2013 — MAR 2014</time><h3>Jr. Java Developer</h3><div class="org">Softech Infosys, Ahmedabad</div><p>Developed software using Java, Advanced Java, Hibernate and MVC frameworks, collaborating with teams to translate requirements into technical solutions.</p></div>
+  </div>
+</div>
+</section>
+
+<section>
+<div class="wrap">
+  <div class="section-head"><div><div class="kicker">08 — Skills</div><h2>A multidisciplinary toolkit.</h2></div></div>
+  <div class="skills">
+    <div class="skill"><h3>Product</h3><ul><li>Product Strategy</li><li>UX Strategy</li><li>User Research</li><li>Journey Mapping</li><li>Information Architecture</li></ul></div>
+    <div class="skill"><h3>Design</h3><ul><li>UI/UX Design</li><li>Interaction Design</li><li>Visual Design</li><li>Design Systems</li><li>Prototyping</li></ul></div>
+    <div class="skill"><h3>Technology</h3><ul><li>Figma</li><li>HTML</li><li>CSS</li><li>Responsive Design</li><li>Front-End UI</li></ul></div>
+    <div class="skill"><h3>Leadership + AI</h3><ul><li>Design Leadership</li><li>Mentoring</li><li>Stakeholder Management</li><li>AI-assisted Design</li><li>Workflow Automation</li></ul></div>
+  </div>
+</div>
+</section>
+
+<section id="contact" class="contact">
+<div class="wrap">
+  <div class="kicker">09 — Contact</div>
+  <h2>Have a complex product problem? <span>Let's solve it.</span></h2>
+  <p>Looking for product design leadership, senior UI/UX work or design-to-development collaboration.</p>
+  <div class="actions"><a class="btn primary" href="mailto:patelkrunal291@gmail.com">Email me ↗</a><a class="btn" href="tel:+919904921328">Call +91 99049 21328</a><a class="btn" href="Krunal_Patel_Resume.pdf" download>Download resume ↓</a><a class="btn" href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn ↗</a></div>
+</div>
+</section>
+</main>
+<footer class="wrap footer"><span>© 2026 Krunal Patel</span><span>Product Design Manager · UI/UX · Fintech · Design Systems · Front-End</span></footer>
+</body>
+</html>
